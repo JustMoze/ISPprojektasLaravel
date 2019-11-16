@@ -1,85 +1,34 @@
-@extends('layouts.pageStructure')
-@section('topic')
-  <p class="topic" >Registracija</p>
-@endsection
+@extends('layouts.app')
 
 @section('content')
-<form method="post" action="Registration/submit">
-  @csrf
-  <div class="row first-row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <form>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">Jūsų vardas: </span>
-          </div>
-          <input type="text" class="form-control" placeholder="@Vardas" aria-describedby="basic-addon3">
+
+<section class="main">
+  <div class="container-fluid">
+    <form class="form-signin">
+      <h1 class="mb-3 font-weight-normal">Prašau registruotis</h1>
+      <div class="form-control-pad">
+          <label for="inputName" class="sr-only">Name</label>
+          <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus>
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <form>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">Jūsų pavardė: </span>
-          </div>
-          <input type="text" class="form-control" placeholder="@Pavardė" aria-describedby="basic-addon3">
+        <div class="form-control-pad">
+          <label for="inputSuraname" class="sr-only">Email address</label>
+          <input type="text" id="inputSuraname" class="form-control" placeholder="Surname" required autofocus>
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <form>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">Jūsų elektroninis paštas: </span>
-          </div>
-          <input type="text" class="form-control" placeholder="@E-Paštas" aria-describedby="basic-addon3">
+        <div class="form-control-pad">
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <form>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">Prisijungimo vardas: </span>
-          </div>
-          <input type="text" class="form-control" placeholder="@Username" aria-describedby="basic-addon3">
+        <div class="form-control-pad">
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <form>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">Slaptažodis: </span>
-          </div>
-          <input type="password" class="form-control" placeholder="@Slaptažodis" aria-describedby="basic-addon3">
+        <div class="form-control-pad">
+          <label for="inputRepeatPassword" class="sr-only">Password</label>
+          <input type="password" id="inputRepeatPassword" class="form-control" placeholder="Repeat Password" required>
         </div>
-      </form>
-    </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Registruotis</button>
+    </form>
   </div>
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <button type="button" class="btn btn-outline-success reg-button">Registruotis</button>
-      <br>
-      <br>
-      <br>
-    </div>
-  </div>
-  <br>
-</form>
+
+</section>
 @endsection

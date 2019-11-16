@@ -39,15 +39,7 @@ body {
 }
 /********************* Class indikators ****************************/
 /* Logo */
-.logo_font {
-  font-family: 'Indie Flower', cursive;
-  font-size: 3rem;
-}
-.logo_KTU {
-  font-size: 3.5rem;
-  font-family: 'Indie Flower', cursive;
-  color: #f7be16;
-}
+
 /* Navbar styles */
 .navbar_hrefs {
   font-size: 1.3rem;
@@ -59,16 +51,31 @@ body {
 }
 .search_div {
   background-color: #3f72af;
-}.logo_font {
-  font-family: 'Indie Flower', cursive;
-  font-size: 3rem;
 }
+
+.logo_font {
+  font-family: "Oswald", cursive;
+  font-size: 1.7rem;
+  letter-spacing: 3px;
+}
+
 .logo_KTU {
-  font-size: 3.5rem;
+  font-size: 1.7rem;
   font-family: 'Indie Flower', cursive;
   color: #f7be16;
 }
 /* Navbar styles */
+
+.navbar-spalva{
+  background-color: #3f72af;
+  color: #fff;
+}
+
+.nav-padding{
+  padding-right: 7%;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
 .search_col {
     margin-bottom: 1rem;
 }
@@ -79,15 +86,6 @@ body {
 .fillter_button: {
   width: 108px;
   margin-left: 15%;
-}
-.dropdown-toggle::after {
-  margin-left: 2.5em;
-  vertical-align: 1.255em;
-}
-.menu_items {
-  padding-top: 30px;
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 /* top Container with main picture */
 .container-fluid{
@@ -114,39 +112,41 @@ body {
 .icons:hover {
   color: #ec9b3b;
 }
+
 /* Testimonial section */
 #testimonials {
   padding: 7% 15%;
 }
-/* section press */
-.rooms_container {
-  padding: 2% 5%;
-}
+
+/* Room cards */
+
 #press {
   background-color: #3f72af;
-  border: 1px solid;
 }
-.rooms_btn{
-  background-color: #3f72af;
-  color: white;
+
+.pricing{
+  padding: 50px;
+  font-family: "Oswald";
+  text-align: center;
 }
+
+.card-img img{
+  max-width: 100%;
+  height: 250px;
+}
+
+.pricing-cards{
+  padding: 3% 2%;
+}
+
+.color-room{
+  background-color: #c0ffb3;
+}
+
 .rooms_btn:hover {
   background-color: #ec9b3b;
-  font-weight: bold;
-  font-size: 1.2rem;
 }
-.room_card {
-  width: 21rem;
-  margin: 2% 19%;
-}
-.card {
-  margin: 7% 13%;
-  border: 2px bold black;
-  height: 350px;
-}
-.card-body {
-  background-color: #dbe2ef;
-}
+
 /* spec offers  */
 .Spec_offers {
   background-color: #393e46;
@@ -157,33 +157,19 @@ body {
 }
 .spec_off_1 {
   margin: 2% 15%;
-  font-family: 'Indie Flower', cursive;
   font-size: 2.5rem;
   color: white;
 }
 .spec_off_2 {
   font-size: 1.5rem;
 }
-.spec_ord_buttons {
-  font-size: 1.5rem;
-  font-weight: bold #dbe2ef;
-  color: #dbe2ef;
-  background-color: #112d4e;
-}
-.spec_off_row {
-  height: 41rem;
-}
+
 .spec_ord_buttons:hover{
   background-color: #ec9b3b;
-  color: #000000;
 }
 .spec_off_img {
   width: 70%;
   height: 50%;
-}
-.pricing-column{
-  height: 35rem;
-  padding: 3% 2%;
 }
 /* Footer */
 #footer {
@@ -193,23 +179,6 @@ body {
 #cta {
   width: 100%;
   background-color: #3f72af;
-}
-/* media Query */
-@media (max-width: 1370px) {
-  .room_card {
-    width: 18rem;
-  }
-  /* .rooms_modals {
-      padding-right: 0rem;
-      padding-left: 0;
-  } */
-  .rooms_container {
-    padding: 2% 0% 2% 0%;
-    margin-left: 1%;
-  }
-  .row {
-    margin-right: 4%;
-  }
 }
 /* Fotter's part */
 .footer-title {
@@ -228,4 +197,28 @@ body {
 .footer-button2:hover {
   background-color: #cbf1f5;
   border: 2px solid #71c9ce;
+  margin: auto;
+  text-align: center;
+  padding: 15% 10px;
+}
+
+/* Login section */
+
+.main{
+  background-color: #fcf9ea;
+}
+
+.form-signin{
+  width: 100%;
+  max-width: 330px;
+  padding: 7% 10px;
+  margin: auto;
+}
+
+.form-control-pad{
+  padding: 3% 1%;
+}
+
+.check-left label{
+  margin-right: 50%;
 }

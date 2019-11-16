@@ -14,12 +14,15 @@
 Route::get('/', function () {
     return view('home');
 });
+
 Route::get('/Profile', function () {
     return view('profile');
 })->name('profile-window');
+
 Route::get('/Registration', function () {
     return view('registration');
 })->name('registration-Form');
+
 Route::get('/Login', function () {
     return view('login');
 })->name('login-Form');
