@@ -1,43 +1,21 @@
-@extends('layouts.pageStructure')
+@extends('layouts.app')
 
-@section('topic')
-  <p class="topic" >Prisijungimas</p>
-@endsection
 @section('content')
-<form  method="post" action="Login/Submit">
-  @csrf
-  <div class="row first-row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <form>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">Prisijungimo vardas: </span>
-          </div>
-          <input type="text" class="form-control" placeholder="@Username" aria-describedby="basic-addon3">
-        </div>
-      </form>
-    </div>
+<section class="main">
+  <div class="container-fluid">
+    <form class="form-signin">
+      <h1 class="mb-3 font-weight-normal">Prašau prisijungti</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="check-left checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
   </div>
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <form>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">Slaptažodis: </span>
-          </div>
-          <input type="password" class="form-control" placeholder="@Slaptažodis" aria-describedby="basic-addon3">
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <button type="button" class="btn btn-outline-success reg-button">Prisijungti</button>
-    </div>
-  </div>
-  <br style="margin-top: 25%">
-</form>
+</section>
 @endsection

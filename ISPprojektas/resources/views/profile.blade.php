@@ -1,6 +1,6 @@
-@extends('layouts.defaultPage')
+@extends('layouts.app')
 
 
 @section('content')
-  @extends('sections/profile')
+  @include('sections.profile')
 @endsection
