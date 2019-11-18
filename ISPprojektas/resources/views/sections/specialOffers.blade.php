@@ -3,7 +3,7 @@
   <p class="spec_off_2">We order you to reserve today's best rooms</p>
 </div>
 
-<section class="pricing" id="pricing">
+<section class="pricing">
 
 
 <div class="row">

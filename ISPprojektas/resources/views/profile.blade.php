@@ -3,4 +3,5 @@
 
 @section('content')
   @include('sections.profile')
+  @include('sections.RegisteredUsers')
 @endsection
