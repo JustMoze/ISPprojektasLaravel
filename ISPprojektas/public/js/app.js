@@ -19233,13 +19233,9 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // document.querySelector(".footer-button2").addEventListener("mouseover", function(){
-//     var txt = "Mode lops";
-//     document.querySelector(".footer-button2").innerHTML = txt;
-// });
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-
-document.querySelector("h3").innerHTML = "Neveikia";
+document.querySelector("h3").innerHTML = "hello";
 
 /***/ }),
 
@@ -19293,8 +19289,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\mozai\Desktop\ISPprojektasLaravel\ISPprojektas\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\mozai\Desktop\ISPprojektasLaravel\ISPprojektas\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Aleksandras\Documents\KTU\3kursas\Is pagrindai\Hotel Laravel\ISPprojektasLaravel\ISPprojektas\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Aleksandras\Documents\KTU\3kursas\Is pagrindai\Hotel Laravel\ISPprojektasLaravel\ISPprojektas\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
