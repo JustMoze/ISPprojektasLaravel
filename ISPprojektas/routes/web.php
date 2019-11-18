@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+Route::get('/', 'RoomController@index');
 Route::get('/Profile', function () {
     return view('profile');
 })->name('profile-window');
@@ -27,10 +24,9 @@ Route::get('/Login', function () {
     return view('login');
 })->name('login-Form');
 
-Route::get('/Comments', function(){
-    return view('comments');
-})->name('Comment-Form');
+Route::get('/Room', function() {
+  return view('room');
+})->name('room-page');
 
-Route::post('Comments/submit', function(){
-  dd(Request::all()); //dump&die
-})->name('Comment-submit-form');
+// this will bind all contrller's action
+Route::resource('rooms', 'RoomController');
