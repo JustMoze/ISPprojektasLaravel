@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+Route::get('/', 'RoomController@index');
 Route::get('/Profile', function () {
     return view('profile');
 })->name('profile-window');
@@ -26,3 +23,10 @@ Route::get('/Registration', function () {
 Route::get('/Login', function () {
     return view('login');
 })->name('login-Form');
+
+Route::get('/Room', function() {
+  return view('room');
+})->name('room-page');
+
+// this will bind all contrller's action
+Route::resource('rooms', 'RoomController');
