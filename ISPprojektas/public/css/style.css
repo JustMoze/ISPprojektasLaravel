@@ -55,12 +55,13 @@ body {
 
 .logo_font {
   font-family: "Oswald", cursive;
-  font-size: 1.7rem;
+  padding-left: 1%;
+  font-size: 2.5rem;
   letter-spacing: 3px;
 }
 
 .logo_KTU {
-  font-size: 1.7rem;
+  font-size: 3rem;
   font-family: 'Indie Flower', cursive;
   color: #f7be16;
 }
@@ -118,7 +119,23 @@ body {
 #testimonials {
   padding: 7% 15%;
 }
-
+.foto-mg {
+  text-align: left;
+  margin: 2%;
+}
+.remove-room-btn {
+  text-align: right;
+}
+.room-photo{
+  width: 100%;
+}
+.room-info {
+  font-size: 2rem;
+}
+.nav-padding {
+  padding-top: 2%;
+  margin-top: -2%;
+}
 /* Room cards */
 
 #press {
@@ -214,17 +231,58 @@ body {
 
 .form-signin{
   width: 100%;
-  max-width: 330px;
+  max-width: 70%;
   padding: 7% 10px;
   margin: auto;
 }
-
+.regin-padding {
+    padding: 2%;
+}
 .form-control-pad{
-  padding: 3% 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .check-left label{
   margin-right: 50%;
+}
+.foto-mg {
+  text-align: left;
+  margin: 2%;
+}
+.remove-room-btn {
+  text-align: right;
+}
+.room-photo{
+  width: 100%;
+}
+.room-info {
+  font-size: 2rem;
+}
+.nav-padding {
+  padding-top: 2%;
+  margin-top: -2%;
+}
+.registration-label {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.registration-button {
+  width: 30%;
+  position: relative;
+  left: 70%;
+  background-color: #3f72af;
+}
+.registration-button:hover {
+  background-color: #f7be16;
+  color: black;
+}
+.login-inputs {
+  padding: 1% 1%;
+}
+.reg-row {
+  padding-bottom: 1%;
+  padding-top: 1%;
 }
 
 /* Profile section */

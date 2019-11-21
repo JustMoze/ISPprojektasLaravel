@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+Route::get('/', 'RoomController@index');
 Route::get('/Profile', function () {
     return view('profile');
 })->name('profile-window');
@@ -46,3 +43,10 @@ Route::get('/Addcomplaint', function(){
 Route::post('Addcomment/submit', 'CommentController@submit')->name('Comment-submit-form');
 
 Route::post('Addcomplaint/submit', 'ComplaintController@submit')->name('Complaint-submit-form');
+
+Route::get('/Room', function() {
+  return view('room');
+})->name('room-page');
+
+// this will bind all contrller's action
+Route::resource('rooms', 'RoomController');

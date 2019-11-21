@@ -1,7 +1,5 @@
 require('./bootstrap');
 
-
-
 for (var i = 0; i < document.querySelectorAll(".checked").length; i++) {
 
   document.querySelectorAll(".checked")[i].addEventListener("click", function() {
