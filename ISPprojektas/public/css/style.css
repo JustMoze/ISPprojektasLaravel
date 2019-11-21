@@ -252,8 +252,64 @@ hr {
   border-radius: 5%;
 }
 
-/* Comment section */
+/* Review comments/complaints section */
+
+.com-compl-heading{
+  padding: 2% 7%;
+}
+
+.card-white{
+  color: #111;
+  background-color: #fff;
+  border-color: #ddd;
+  border: 1px solid #dddddd;
+  font-family: "Oswald";
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.card-white:hover{
+  box-shadow: -10px 10px 35px #110133;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin-right: 15px;
+}
+
+.post-description p, h4 {
+  color: black;
+}
+
+.post-description {
+  padding: 15px;
+}
+
+.retingo-iconos{
+  text-align: right;
+  padding: 1% 2%
+}
+
+.post{
+  padding: 1% 2%;
+}
+
+/* Addcomment section */
 
 .Comment-sec{
-  padding: 7% 2%;
+  padding: 3% 2%;
+}
+
+.vertinimo-iconos  {
+  padding-bottom: 10px;
+}
+
+.vertinimo-laukas{
+  padding-right: 20%;
+}
+
+.checked{
+  color: black;
 }

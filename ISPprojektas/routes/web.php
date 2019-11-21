@@ -28,9 +28,21 @@ Route::get('/Login', function () {
 })->name('login-Form');
 
 Route::get('/Comments', function(){
-    return view('comments');
-})->name('Comment-Form');
+  return view('Comments');
+})->name('all-Comments');
 
-Route::post('Comments/submit', function(){
-  dd(Request::all()); //dump&die
-})->name('Comment-submit-form');
+Route::get("/Complaints", function(){
+  return view('Complaints');
+})->name('all-Complaints');
+
+Route::get('/Addcomment', function(){
+    return view('Addcomment');
+})->name('Comment-add-form');
+
+Route::get('/Addcomplaint', function(){
+    return view('Addcomplaint');
+})->name('Complaint-add-form');
+
+Route::post('Addcomment/submit', 'CommentController@submit')->name('Comment-submit-form');
+
+Route::post('Addcomplaint/submit', 'ComplaintController@submit')->name('Complaint-submit-form');
