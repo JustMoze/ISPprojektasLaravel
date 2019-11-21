@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/b6e025948a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+  <link rel="icon" href="favicon.ico">
   <title>KTU hotel managers</title>
 </head>
 
@@ -68,7 +69,7 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="{{asset('js/app.js')}}" charset="utf-8"></script>
+  <script src="{{asset('js.app.js')}}" charset="utf-8"></script>
   </body>
 
   </html>
