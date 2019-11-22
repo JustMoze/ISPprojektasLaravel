@@ -11,29 +11,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!-- style.css -->
-<<<<<<< Updated upstream
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Ubuntu&display=swap" rel="stylesheet">
-=======
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu&display=swap" rel="stylesheet">
->>>>>>> Stashed changes
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/b6e025948a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-<<<<<<< Updated upstream
-=======
   <link rel="icon" href="favicon.ico">
->>>>>>> Stashed changes
   <title>KTU hotel managers</title>
 </head>
 
 <body>
   <!-- Navbar -->
   <section class="navbar-spalva">
-<<<<<<< Updated upstream
-=======
-    <div>
->>>>>>> Stashed changes
       <nav class="navbar navbar-expand-md navbar-dark">
         <a class="navbar-brand logo_font" href=""><span class="logo_KTU">KTU</span>HotelManagers</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,10 +53,6 @@
           </ul>
         </div>
       </nav>
-<<<<<<< Updated upstream
-=======
-    </div>
->>>>>>> Stashed changes
   </section>
 
 
@@ -79,11 +65,8 @@
     <i class="footer-icon-line fab fa-facebook fa-2x"></i>
     <i class="footer-icon-line fab fa-instagram fa-2x"></i>
     <i class="footer-icon-line fas fa-envelope fa-2x"></i>
-<<<<<<< Updated upstream
+    
     <p>Copyright 2019 &copy; KTU hotel managers</p>
-=======
-    <p>© Copyright 2019 KTU hotel managers</p>
->>>>>>> Stashed changes
   </footer>
 
   <!-- Optional JavaScript -->
