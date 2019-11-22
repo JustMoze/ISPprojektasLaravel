@@ -660,22 +660,7 @@ module.exports = function createError(message, config, code, request, response) 
 /***/ "./node_modules/axios/lib/core/dispatchRequest.js":
 /*!********************************************************!*\
   !*** ./node_modules/axios/lib/core/dispatchRequest.js ***!
-  \********************************************************/
-/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
-var transformData = __webpack_require__(/*! ./transformData */ "./node_modules/axios/lib/core/transformData.js");
-var isCancel = __webpack_require__(/*! ../cancel/isCancel */ "./node_modules/axios/lib/cancel/isCancel.js");
-var defaults = __webpack_require__(/*! ../defaults */ "./node_modules/axios/lib/defaults.js");
-var isAbsoluteURL = __webpack_require__(/*! ./../helpers/isAbsoluteURL */ "./node_modules/axios/lib/helpers/isAbsoluteURL.js");
-var combineURLs = __webpack_require__(/*! ./../helpers/combineURLs */ "./node_modules/axios/lib/helpers/combineURLs.js");
-
-/**
- * Throws a `Cancel` if cancellation has been requested.
  */
 function throwIfCancellationRequested(config) {
   if (config.cancelToken) {
@@ -19231,43 +19216,9 @@ module.exports = function(module) {
   !*** ./resources/js/app.js ***!
   \*****************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-document.querySelector("h3").innerHTML = "hello";
-
-/***/ }),
-
-/***/ "./resources/js/bootstrap.js":
-/*!***********************************!*\
-  !*** ./resources/js/bootstrap.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-// import Echo from 'laravel-echo';
-// window.Pusher = require('pusher-js');
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     encrypted: true
-// });
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\package.json: Error while parsing JSON - Unexpected string in JSON at position 1077\n    at JSON.parse (<anonymous>)\n    at C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\@babel\\core\\lib\\config\\files\\package.js:57:20\n    at C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\@babel\\core\\lib\\config\\files\\utils.js:29:12\n    at cachedFunction (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\@babel\\core\\lib\\config\\caching.js:33:19)\n    at findPackageData (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\@babel\\core\\lib\\config\\files\\package.js:33:11)\n    at buildRootChain (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\@babel\\core\\lib\\config\\config-chain.js:105:85)\n    at loadPrivatePartialConfig (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\@babel\\core\\lib\\config\\partial.js:85:55)\n    at Object.loadPartialConfig (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\@babel\\core\\lib\\config\\partial.js:110:18)\n    at Object.<anonymous> (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\babel-loader\\lib\\index.js:144:26)\n    at Generator.next (<anonymous>)\n    at asyncGeneratorStep (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\babel-loader\\lib\\index.js:3:103)\n    at _next (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\babel-loader\\lib\\index.js:5:194)\n    at C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\babel-loader\\lib\\index.js:5:364\n    at new Promise (<anonymous>)\n    at Object.<anonymous> (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\babel-loader\\lib\\index.js:5:97)\n    at Object.loader (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\babel-loader\\lib\\index.js:60:18)\n    at Object.<anonymous> (C:\\Users\\Aleksandras\\Documents\\KTU\\3kursas\\Is pagrindai\\Hotel Laravel\\ISPprojektasLaravel\\ISPprojektas\\node_modules\\babel-loader\\lib\\index.js:55:12)");
 
 /***/ }),
 
