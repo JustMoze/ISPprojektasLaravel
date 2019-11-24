@@ -35,7 +35,7 @@
               <a class="nav-link menu_items" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link menu_items" href="#press">Rooms</a>
+              <a class="nav-link menu_items" href="/rooms">Rooms</a>
             </li>
             <li class="nav-item">
               <a class="nav-link menu_items" href="#pricing">Special orders</a>
@@ -53,6 +53,7 @@
           </ul>
         </div>
       </nav>
+      @yield('search-field')
   </section>
 
 
