@@ -131,6 +131,7 @@ body {
 }
 .room-info {
   font-size: 2rem;
+  font-family: 'Lobster', cursive;
 }
 .nav-padding {
   padding-top: 2%;
@@ -139,7 +140,7 @@ body {
 /* Room cards */
 
 #press {
-  background-color: #3f72af;
+  background-color: #dff6f0;
 }
 
 .pricing{
@@ -196,6 +197,7 @@ body {
   background-color: #dbe2ef;
   padding-bottom: 3%;
   text-align: center;
+  margin-top: 7%;
 }
 #cta {
   width: 100%;
@@ -315,4 +317,98 @@ hr {
 .Comment-sec{
   padding: 7% 2%;
 
+}
+.pagination {
+  position: relative;
+  left: 86.7%;
+}
+/* .filter-btn {
+  position: relative;
+  right: 33%;
+} */
+.color-btn-filter2 {
+    background-color: #3f72af;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 17%;
+}
+.color-btn-filter1 {
+  position: absolute;
+  left: 1.5%;
+  background-color: #3f72af;
+  font-family: 'Montserrat', sans-serif;
+}
+.color-btn-filter1:hover {
+    background-color: #3f72af;
+    font-family: 'Montserrat', sans-serif;
+}
+.a-filters {
+  font-family: 'Montserrat', sans-serif;
+}
+.h1-room-title {
+  margin: 2% auto 1%;
+  font-size: 4rem;
+  font-weight: 700;
+}
+.active-amber-textarea.md-form label.active {
+  color: #3f72af;
+}
+.amber-textarea textarea.md-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #3f72af;
+  box-shadow: 0 1px 0 0 #3f72af;
+}
+.amber-textarea.md-form .prefix.active {
+  color: #3f72af;
+}
+.active-amber-textarea.md-form textarea.md-textarea:focus:not([readonly])+label {
+  color: #3f72af;
+}
+.active-amber-textarea-2 textarea.md-textarea {
+  border-bottom: 1px solid #3f72af;
+  box-shadow: 0 1px 0 0 #3f72af;
+
+}
+.active-amber-textarea-2.md-form label.active {
+  color: #3f72af;
+}
+.active-amber-textarea-2.md-form label {
+  color: #3f72af;
+}
+.active-amber-textarea-2.md-form .prefix {
+  color: #3f72af;
+}
+.active-amber-textarea-2.md-form textarea.md-textarea:focus:not([readonly])+label {
+  color: #3f72af;
+}
+.spec-width {
+  width: 90%;
+}
+.second-row {
+  margin-left: 0.1%;
+  margin-top: 2%;
+}
+.textfield-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: black;
+}
+.rate-btn:hover {
+  background-color: #3f72af;
+}
+.rate-btn {
+  border: solid 1.3px  #3f72af;
+  font-family:  'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
+.star {
+  color: yellow;
+}
+.fire {
+  color: red;
+}
+.cart {
+  color: green;
+}
+.cart:hover {
+  color: #dff6f0;
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Room;
+use App\Http\Controllers\Controller;
 
 class RoomController extends Controller
 {
@@ -16,9 +17,25 @@ class RoomController extends Controller
     public function index()
     {
         //
-        $rooms = Room::get();
+        if (request()->has('tipas')) {
+          // code...
+          $rooms = Room::where('tipas', request('tipas'))
+          ->paginate(9)
+          ->appends('tipas', request('tipas'));
+        }
+        else if (request()->has('sort')) {
+          // code...
+          $rooms = Room::orderBy('kaina', request('sort'))
+          ->paginate(9)
+          ->appends('sort', request('sort'));
+        }
+        else{
+          $rooms = Room::paginate(9);
+        }
         // return dd($rooms);
-        return view('home')->with('rooms', $rooms);
+        return view('rooms')->with('rooms', $rooms);
+        // ['users' => $users]
+        //)->with('rooms', $rooms
     }
 
     /**
