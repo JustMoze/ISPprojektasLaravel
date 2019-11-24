@@ -11,6 +11,12 @@
 |
 */
 
+
+Route::get('/', 'RoomController@index')->name('home');;
+
+Route::get('/Profile', 'RoomController@getProfile')->name('profile');
+
+Route::get('/Registration', 'RoomController@getRegistration')->name('registration');
 Route::get('/rooms', 'RoomController@index');
 Route::get('/Profile', function () {
     return view('profile');
@@ -29,24 +35,28 @@ Route::get('/Login', function () {
     return view('login');
 })->name('login-Form');
 
-Route::get('/Comments', function(){
-  return view('Comments');
-})->name('all-Comments');
+Route::get('/Login', 'RoomController@getLogin')->name('login');
 
-Route::get("/Complaints", function(){
-  return view('Complaints');
-})->name('all-Complaints');
+//Atsiliepimu perziura
+Route::get('/Comments', 'CommentController@getAtsiliepimus')->name('get-Comments');
 
+//nusiskundimu perziura
+Route::get("/Complaints", 'ComplaintController@getNusiskundimai')->name('-get-Complaints');
+
+//prideti nauja atsiliepima
 Route::get('/Addcomment', function(){
     return view('Addcomment');
 })->name('Comment-add-form');
 
+//prideti nauja nusiskundima
 Route::get('/Addcomplaint', function(){
     return view('Addcomplaint');
 })->name('Complaint-add-form');
 
+//prideda nauja atsiliepima
 Route::post('Addcomment/submit', 'CommentController@submit')->name('Comment-submit-form');
 
+//prideda nauja nusiskundima
 Route::post('Addcomplaint/submit', 'ComplaintController@submit')->name('Complaint-submit-form');
 
 Route::get('/Room', function() {

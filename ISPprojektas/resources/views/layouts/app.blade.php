@@ -32,7 +32,7 @@
         <div class="nav-padding collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link menu_items" href="/">Home</a>
+              <a class="nav-link menu_items {{ Request::route()->getName() === 'home' ? 'active' : '' }}" href="{{ route('home')}}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link menu_items" href="/rooms">Rooms</a>
@@ -41,13 +41,13 @@
               <a class="nav-link menu_items" href="#pricing">Special orders</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link menu_items" href="/Profile">Profile</a>
+              <a class="nav-link menu_items {{ Request::route()->getName() === 'profile' ? 'active' : '' }}" href="{{ route('profile') }}">Profile</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Login</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="/Login">Log in</a>
-                <a class="dropdown-item" href="/Registration">Sign up</a>
+                <a class="dropdown-item {{ Request::route()->getName() === 'login' ? 'active' : '' }}" href="{{ route('login') }}">Log in</a>
+                <a class="dropdown-item {{ Request::route()->getName() === 'registration' ? 'active' : '' }}" href="{{ route('registration')}}">Sign up</a>
               </div>
             </li>
           </ul>
@@ -66,7 +66,7 @@
     <i class="footer-icon-line fab fa-facebook fa-2x"></i>
     <i class="footer-icon-line fab fa-instagram fa-2x"></i>
     <i class="footer-icon-line fas fa-envelope fa-2x"></i>
-    
+
     <p>Copyright 2019 &copy; KTU hotel managers</p>
   </footer>
 
