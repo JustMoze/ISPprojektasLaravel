@@ -2,5 +2,6 @@
 
 @section('content')
 
-  @include('sections.ReviewComments')
+  @include('sections.ReviewComplaints')
+
 @endsection
