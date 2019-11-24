@@ -4,7 +4,6 @@
   }
   label {
     position: relative;
-    right: 15%;
   }
 </style>
 @extends('layouts.app')

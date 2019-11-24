@@ -15,9 +15,10 @@
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/b6e025948a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body id="press">
   <section class="navbar-spalva">
       <nav class="navbar navbar-expand-md navbar-dark nav-padding">
         <a class="navbar-brand logo_font" href=""><span class="logo_KTU">KTU</span>HotelManagers</a>
@@ -54,10 +55,19 @@
       <div class="col-sm-4 col-md-4 col-lg-4">
         <img src="@yield('roomImage')" alt="Kambario nuotrauka" class="room-photo">
       </div>
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <h3>Kambario numeris: <span class="room-info"> @yield('roomNumber') </span></h3>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <h3 class="room-text">Kambario numeris: <span class="room-info"> @yield('roomNumber') </span></h3>
         <h3>Kambario aprašymas: <span class="room-info">@yield('roomType') </span></h3>
-        <h3>Kaina: <span class="room-info"> @yield('roomPrice')</span></h3>
+        <h3>Kaina: <span class="room-info"> @yield('roomPrice')€</span></h3>
+        @yield('reserve')
+      </div>
+    </div>
+    <div class="row second-row">
+      <div class="col-sm-1.5 col-md-1.5 col-lg-1.5">
+        <button type="button" class="btn btn-outline rate-btn"><i class="fas fa-star star fa-1.5x"></i> Įvertinti</button>
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <button type="button" class="btn btn-outline rate-btn"><i class="fas fa-fire fire fa-1.5x"></i> Rašyti nusiskundimą</button>
       </div>
     </div>
   </div>
