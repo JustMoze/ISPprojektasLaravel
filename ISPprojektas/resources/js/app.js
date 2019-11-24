@@ -1,6 +1,6 @@
 require('./bootstrap');
 
-
+document.querySelector(".com-compl-heading").innerHTml = "green";
 
 for (var i = 0; i < document.querySelectorAll(".checked").length; i++) {
 
@@ -22,7 +22,9 @@ for (var i = 0; i < document.querySelectorAll(".checked").length; i++) {
 }
 
 for (var i = 0; i < document.querySelectorAll(".ivetinta").length; i++){
-  if(i<4){
+  var ivertinimas = document.getElementById(5).id;
+  document.querySelector(".ivert").style.color = "green";
+  if(i < ivertinimas){
 
     document.getElementById((i+1)+"one").style.color = "#ed6663";
   }
