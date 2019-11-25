@@ -32,7 +32,7 @@
         <div class="nav-padding collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link menu_items {{ Request::route()->getName() === 'home' ? 'active' : '' }}" href="{{ route('home')}}">Home</a>
+              <a class="nav-link menu_items" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link menu_items" href="/rooms">Rooms</a>
@@ -41,13 +41,13 @@
               <a class="nav-link menu_items" href="#pricing">Special orders</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link menu_items {{ Request::route()->getName() === 'profile' ? 'active' : '' }}" href="{{ route('profile') }}">Profile</a>
+              <a class="nav-link menu_items {{ Request::route()->getName() === 'profile' ? 'active' : '' }}" href="/Profile">Profile</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Login</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item {{ Request::route()->getName() === 'login' ? 'active' : '' }}" href="{{ route('login') }}">Log in</a>
-                <a class="dropdown-item {{ Request::route()->getName() === 'registration' ? 'active' : '' }}" href="{{ route('registration')}}">Sign up</a>
+                <a class="dropdown-item {{ Request::route()->getName() === 'login' ? 'active' : '' }}" href="/Login">Log in</a>
+                <a class="dropdown-item {{ Request::route()->getName() === 'registration' ? 'active' : '' }}" href="/Registration">Sign up</a>
               </div>
             </li>
           </ul>

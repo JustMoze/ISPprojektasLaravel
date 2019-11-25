@@ -12,17 +12,15 @@
 */
 
 
-Route::get('/', 'RoomController@index')->name('home');;
-
-Route::get('/Profile', 'RoomController@getProfile')->name('profile');
-
-Route::get('/Registration', 'RoomController@getRegistration')->name('registration');
 Route::get('/rooms', 'RoomController@index');
+Route::resource('rooms', 'RoomController');
+
+// Route::get('/Profile', 'HomeController@getProfile')->name('profile');
 Route::get('/Profile', function () {
     return view('profile');
 })->name('profile-window');
 
-Route::resource('rooms', 'RoomController');
+// Route::get('/Registration', 'HomeController@getRegistration')->name('registration');
 Route::get('/Registration', function () {
     return view('registration');
 })->name('registration-Form');
@@ -31,17 +29,17 @@ Route::get('/', function () {
     return view('home');
 })->name('main-Page');
 
+
+// Route::get('/Login', 'HomeController@getLogin')->name('login');
 Route::get('/Login', function () {
     return view('login');
 })->name('login-Form');
-
-Route::get('/Login', 'RoomController@getLogin')->name('login');
 
 //Atsiliepimu perziura
 Route::get('/Comments', 'CommentController@getAtsiliepimus')->name('get-Comments');
 
 //nusiskundimu perziura
-Route::get("/Complaints", 'ComplaintController@getNusiskundimai')->name('-get-Complaints');
+Route::get("/Complaints", 'ComplaintController@getNusiskundimai')->name('get-Complaints');
 
 //prideti nauja atsiliepima
 Route::get('/Addcomment', function(){
@@ -59,9 +57,9 @@ Route::post('Addcomment/submit', 'CommentController@submit')->name('Comment-subm
 //prideda nauja nusiskundima
 Route::post('Addcomplaint/submit', 'ComplaintController@submit')->name('Complaint-submit-form');
 
-Route::get('/Room', function() {
-  return view('room');
-})->name('room-page');
+// Route::get('/Room', function() {
+//   return view('room');
+// })->name('room-page');
 
 // this will bind all contrller's action
 Route::resource('rooms', 'RoomController');
@@ -69,4 +67,4 @@ Route::resource('rooms', 'RoomController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/rooms', 'RoomController@show')->name('payment');
+// Route::get('/rooms', 'RoomController@show')->name('payment');

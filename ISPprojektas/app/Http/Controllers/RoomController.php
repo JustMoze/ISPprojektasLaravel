@@ -8,22 +8,6 @@ use App\Http\Controllers\Controller;
 
 class RoomController extends Controller
 {
-
-    public function getHome(){
-      return view('home');
-    }
-
-    public function getProfile(){
-      return view('profile');
-    }
-
-    public function getLogin(){
-      return view('login');
-    }
-
-    public function getRegistration(){
-      return view('registration');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -48,10 +32,7 @@ class RoomController extends Controller
         else{
           $rooms = Room::paginate(9);
         }
-        // return dd($rooms);
         return view('rooms')->with('rooms', $rooms);
-        // ['users' => $users]
-        //)->with('rooms', $rooms
     }
 
     /**
@@ -83,7 +64,6 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-        //
         $room = Room::find($id);
        //  dd($room);
         return view('room')->with('room', $room);
