@@ -30,7 +30,7 @@ Route::get('/Addcomment', function(){
     return view('Addcomment');
 })->name('Comment-add-form');
 
-//prideti nauja nusiskundima
+// //prideti nauja nusiskundima
 Route::get('/Addcomplaint', function(){
     return view('Addcomplaint');
 })->name('Complaint-add-form');
