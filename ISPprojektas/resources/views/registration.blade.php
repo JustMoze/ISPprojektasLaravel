@@ -20,24 +20,24 @@
         </div>
         <div class="form-control-pad">
           <label for="inputEmail" class="sr-only">Gimimo metai</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Gimimo metai" required autofocus>
+          <input type="date" id="inputEmail" class="form-control" placeholder="Gimimo metai" required autofocus>
         </div>
         <div class="form-control-pad">
           <label for="inputEmail" class="sr-only">Adresas</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="E-paštas" required autofocus>
+          <input type="text" id="inputEmail" class="form-control" placeholder="E-paštas" required autofocus>
         </div>
         <div class="row reg-row">
           <div class="col-sm-5 col-md-5 col-lg-5">
             <label for="inputEmail" class="sr-only">Telefono numeris</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Telefono numeris" required autofocus>
+            <input type="text" id="inputEmail" class="form-control" placeholder="Telefono numeris" required autofocus>
           </div>
           <div class="col-sm-2 col-md-2 col-lg-2">
             <label for="inputEmail" class="sr-only">Pašto kodas</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Pašto kodas" required autofocus>
+            <input type="text" id="inputEmail" class="form-control" placeholder="Pašto kodas" required autofocus>
           </div>
           <div class="col-sm-5 col-md-5 col-lg-5">
             <label for="inputEmail" class="sr-only">Pilietybė</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Pilietybė" required autofocus>
+            <input type="text" id="inputEmail" class="form-control" placeholder="Pilietybė" required autofocus>
           </div>
         </div>
         <div class="form-control-pad">
