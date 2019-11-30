@@ -3,7 +3,7 @@
 @section('content')
 <section id="showcase">
   <div class="container">
-    <h1>Find your ideal room for rent</h1>
+    <h1>Atrask svajonių kambarį!</h1>
   </div>
 </section>
 
@@ -12,18 +12,18 @@
   <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-12 feature-box">
       <i class="fas fa-bed fa-5x icons"></i>
-      <h3>Easy to find perfect room</h3>
-      <p>We can offer a room even for the most demanding clients</p>
+      <h3>Lengva atrasti labiausiai tinkantį kambarį</h3>
+      <p>Mes galime pasiūlyti kambarį net ir paties išrankiausiams mūsų klientams</p>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 feature-box">
       <i class="fas fa-bolt fa-5x icons"></i>
-      <h3>Fast service</h3>
-      <p>It takes just few seconds to reservate a room </p>
+      <h3>Greitas aptarnavimas</h3>
+      <p>Tik kelios sekundės iki nuostabaus kambario rezervavimo </p>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 feature-box">
       <i class="far fa-money-bill-alt fa-5x icons"></i>
-      <h3>Lowest prices</h3>
-      <p>We can offer you chiepest rooms around you</p>
+      <h3>Mažiausios kainos</h3>
+      <p>Mes siulome tik pigiausius kambarius!</p>
     </div>
   </div>
 </section>
