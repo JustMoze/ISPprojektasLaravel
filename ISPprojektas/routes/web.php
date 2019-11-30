@@ -20,20 +20,9 @@ Route::get('/Profile', function () {
     return view('profile');
 })->name('profile-window');
 
-// Route::get('/Registration', 'HomeController@getRegistration')->name('registration');
-Route::get('/Registration', function () {
-    return view('registration');
-})->name('registration-Form');
-
 Route::get('/', function () {
     return view('home');
 })->name('main-Page');
-
-
-// Route::get('/Login', 'HomeController@getLogin')->name('login');
-Route::get('/Login', function () {
-    return view('login');
-})->name('login-Form');
 
 //Atsiliepimu perziura
 Route::get('/Comments', 'CommentController@getAtsiliepimus')->name('get-Comments');
