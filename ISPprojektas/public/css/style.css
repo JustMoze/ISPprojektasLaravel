@@ -475,3 +475,13 @@ hr {
   background-color: #dbe2ef;
   padding-bottom: 5%;
 }
+.card-header {
+  font-family:  'Montserrat', sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.justify-content-center {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: #e5dfdf;
+}
