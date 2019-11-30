@@ -35,6 +35,24 @@ Route::get('/Login', function () {
     return view('login');
 })->name('login-Form');
 
+//Nuolaidos trinimas
+//Route::delete('/Discount', 'DiscountController@destroy')->name('Delete');
+Route::get('/Discount/{id}','DiscountController@destroy');
+
+Route::get('/UpdateDiscount/{id}','DiscountController@edit');
+
+Route::post('update/{id_Nuolaida}','DiscountController@update');
+//Nuolaidu perziura
+Route::get('/Discounts', 'DiscountController@getNuolaidas')->name('Discounts');
+
+//Prideti Nuolaida
+Route::get('/AddDiscount', function(){
+    return view('AddDiscount');
+})->name('Discount-add-form');
+
+//prideda nauja nuolaida
+Route::post('AddDiscount/submit', 'DiscountController@submit')->name('Discount-submit-form');
+
 //Atsiliepimu perziura
 Route::get('/Comments', 'CommentController@getAtsiliepimus')->name('get-Comments');
 

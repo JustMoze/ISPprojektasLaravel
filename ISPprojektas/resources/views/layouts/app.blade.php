@@ -38,6 +38,9 @@
               <a class="nav-link menu_items" href="/rooms">Rooms</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link menu_items" href="/Discounts">Discounts</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link menu_items" href="#pricing">Special orders</a>
             </li>
             <li class="nav-item">
