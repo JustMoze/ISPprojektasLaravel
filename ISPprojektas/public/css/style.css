@@ -385,11 +385,11 @@ hr {
     background-color: #3f72af;
     font-family: 'Montserrat', sans-serif;
     position: absolute;
-    left: 17%;
+    right: 0%;
 }
 .color-btn-filter1 {
   position: absolute;
-  left: 1.5%;
+  right: 21.5%;
   background-color: #3f72af;
   font-family: 'Montserrat', sans-serif;
 }
@@ -401,9 +401,10 @@ hr {
   font-family: 'Montserrat', sans-serif;
 }
 .h1-room-title {
-  margin: 2% auto 1%;
+  margin: 2% 1% 1%;
   font-size: 4rem;
   font-weight: 700;
+  text-align: left;
 }
 .active-amber-textarea.md-form label.active {
   color: #3f72af;
@@ -466,4 +467,21 @@ hr {
 }
 .cart:hover {
   color: #dff6f0;
+}
+.card-style {
+  margin-top: 5%;
+}
+.usersManagement {
+  background-color: #dbe2ef;
+  padding-bottom: 5%;
+}
+.card-header {
+  font-family:  'Montserrat', sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.justify-content-center {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: #e5dfdf;
 }

@@ -6,21 +6,6 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-  public function getHome(){
-    return view('home');
-  }
-
-  public function getProfile(){
-    return view('profile');
-  }
-
-  public function getLogin(){
-    return view('login');
-  }
-
-  public function getRegistration(){
-    return view('registration');
-  }
     /**
      * Create a new controller instance.
      *

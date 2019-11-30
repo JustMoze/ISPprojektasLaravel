@@ -49,7 +49,7 @@
               <div class="color-room card-body">
                 <h3>Kambario numeris: {{$room->id}}</h3>
                 <h4>Kaina: {{$room->kaina}}€</h4>
-                <p>Trumpas aprašymas: {{$room->apibudinimas}}</p>
+                <p>{{$room->apibudinimas}}</p>
                 <button type="button" onclick="window.location='rooms/{{$room->id}}'" class="rooms_btn btn btn-lg btn-block btn-dark">
                   <a>
                     Peržiūrėti

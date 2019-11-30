@@ -20,20 +20,9 @@ Route::get('/Profile', function () {
     return view('profile');
 })->name('profile-window');
 
-// Route::get('/Registration', 'HomeController@getRegistration')->name('registration');
-Route::get('/Registration', function () {
-    return view('registration');
-})->name('registration-Form');
-
 Route::get('/', function () {
     return view('home');
 })->name('main-Page');
-
-
-// Route::get('/Login', 'HomeController@getLogin')->name('login');
-Route::get('/Login', function () {
-    return view('login');
-})->name('login-Form');
 
 //Nuolaidos trinimas
 //Route::delete('/Discount', 'DiscountController@destroy')->name('Delete');
@@ -86,3 +75,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/rooms', 'RoomController@show')->name('payment');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// User controller's routes
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:usersManagement')->group(function(){
+  Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'edit']]);
+});

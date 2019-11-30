@@ -1,6 +1,6 @@
 <div class="Spec_offers">
-  <h2 class="spec_off_1">Special offers</h2>
-  <p class="spec_off_2">We order you to reserve today's best rooms</p>
+  <h2 class="spec_off_1">Specialūs pasiūlymai</h2>
+  <p class="spec_off_2">Mes siūlome rezervuoti siandienos top 3 kambarius!</p>
 </div>
 
 <section class="pricing">
@@ -12,12 +12,12 @@
     <div class="card-img card">
         <img src="images/room4.jpg" alt="buisness_room">
       <div class="color-room card-body">
-        <h3>Buisness room NR. 707 </h3>
+        <h3>Verslo kambarys </h3>
         <h2>79€</h2>
-        <p> + lunch </p>
-        <p> + water pool and other atractions </p>
-        <p> + Unlimited drink's bar </p>
-        <button class="spec_ord_buttons btn btn-lg btn-block btn-dark" type="button">Order!</button>
+        <p> + Vakarienė </p>
+        <p> + Baseinas ir kitos linksmybės  </p>
+        <p> + Neribotas gėrimų baras </p>
+        <button class="spec_ord_buttons btn btn-lg btn-block btn-dark" type="button">Užsisakyk!</button>
       </div>
     </div>
   </div>
@@ -26,12 +26,12 @@
     <div class="card-img card">
         <img src="images/room6.jpg" alt="VIP room">
       <div class="color-room card-body">
-        <h3>VIP room</h3>
+        <h3>VIP kambarys</h3>
         <h2>120€</h2>
-        <p> + Warm bath</p>
-        <p> + Unlimited drink's bar </p>
-        <p> + water pool and other atractions</p>
-        <button class="spec_ord_buttons btn btn-lg btn-block btn-dark" type="button">Order!</button>
+        <p> + Šilta vonia</p>
+        <p> + Neribotas gėrimų baras </p>
+        <p> + Baseinas ir kitos linksmybės</p>
+        <button class="spec_ord_buttons btn btn-lg btn-block btn-dark" type="button">Užsisakyk!</button>
       </div>
     </div>
   </div>
@@ -40,12 +40,12 @@
     <div class="card-img card">
         <img src="images/room7.jpg" alt="Economical_room">
       <div class="color-room card-body">
-        <h3>Economical room </h3>
+        <h3>Ekonimiškas kambarys </h3>
         <h2> 65€</h2>
-        <p> + warm bath </p>
-        <p> + massages </p>
-        <p> + water pool </p>
-        <button class="spec_ord_buttons btn btn-lg btn-block btn-dark" type="button">Order!</button>
+        <p> + Šilta vonia</p>
+        <p> + Masažas </p>
+        <p> + Baseinas </p>
+        <button class="spec_ord_buttons btn btn-lg btn-block btn-dark" type="button">Užsisakyk!</button>
       </div>
     </div>
   </div>
