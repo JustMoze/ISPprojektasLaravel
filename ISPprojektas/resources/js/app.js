@@ -5,7 +5,7 @@
  */
 
 
-document.querySelector(".com-compl-heading").innerHTml = "green";
+//document.querySelector(".com-compl-heading").innerHTml = "green";
 require('./bootstrap');
 window.Vue = require('vue');
 /**
@@ -28,6 +28,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
 for (var i = 0; i < document.querySelectorAll(".checked").length; i++) {
 
   document.querySelectorAll(".checked")[i].addEventListener("click", function() {
@@ -48,9 +49,7 @@ for (var i = 0; i < document.querySelectorAll(".checked").length; i++) {
 }
 
 for (var i = 0; i < document.querySelectorAll(".ivetinta").length; i++){
-  var ivertinimas = document.getElementById(5).id;
-  document.querySelector(".ivert").style.color = "green";
-  if(i < ivertinimas){
+  if(i < rank){
 
     document.getElementById((i+1)+"one").style.color = "#ed6663";
   }

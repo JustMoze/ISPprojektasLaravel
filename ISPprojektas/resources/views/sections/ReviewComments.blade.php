@@ -20,17 +20,13 @@
             <p>{{ $atsiliepimas->message }}</p>
           </div>
           <div class="retingo-iconos">
-            <h6 id="{{ $atsiliepimas->rating }}" class="ivert" onload="Ivertinimas();">Ivertinimas:
-
-            <i class="fas fa-fire fa ivetinta" id="1one"></i>
-            <i class="fas fa-fire fa ivetinta" id="2one"></i>
-            <i class="fas fa-fire fa ivetinta" id="3one"></i>
-            <i class="fas fa-fire fa ivetinta" id="4one"></i>
-            <i class="fas fa-fire fa ivetinta" id="5one"></i>
+            <h6 class="ivert">
+              Ivertinimas: <strong style="color: #ed6663">5/{{ $atsiliepimas->rating }} <i class="fas fa-fire"></i></strong>
           </h6>
           </div>
         </div>
       </div>
+      <script src="{{asset('js\app.js')}}" charset="utf-8"></script>
     @endforeach
   </div>
 </div>

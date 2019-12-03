@@ -32,7 +32,7 @@
         <div class="nav-padding collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link menu_items {{ Request::route()->getName() === 'home' ? 'active' : '' }}" href="{{ route('home')}}">Home</a>
+              <a class="nav-link menu_items " href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link menu_items" href="/rooms">Rooms</a>
@@ -56,7 +56,7 @@
       @yield('search-field')
   </section>
 
-
+  @include('inc.messeges')
   <!-- main section -->
   @yield('content')
 
@@ -73,7 +73,7 @@
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-  <script src="{{asset('js.app.js')}}" charset="utf-8"></script>
+  <script src="{{asset('js\app.js')}}" charset="utf-8"></script>
   </body>
 
   </html>
