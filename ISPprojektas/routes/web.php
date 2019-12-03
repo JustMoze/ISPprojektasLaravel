@@ -43,30 +43,38 @@ Route::get('/AddDiscount', function(){
 Route::post('AddDiscount/submit', 'DiscountController@submit')->name('Discount-submit-form');
 
 //Atsiliepimu perziura
-Route::get('/Comments', 'CommentController@getAtsiliepimus')->name('get-Comments');
+//Route::get('/Comments', 'CommentController@getAtsiliepimus')->name('get-Comments');
 
 //nusiskundimu perziura
-Route::get("/Complaints", 'ComplaintController@getNusiskundimai')->name('get-Complaints');
+//Route::get("/Complaints", 'ComplaintController@getNusiskundimai')->name('-get-Complaints');
 
 //prideti nauja atsiliepima
-Route::get('/Addcomment', function(){
-    return view('Addcomment');
-})->name('Comment-add-form');
+// Route::get('/Addcomment', function(){
+//     return view('Addcomment');
+// })->name('Comment-add-form');
 
-//prideti nauja nusiskundima
-Route::get('/Addcomplaint', function(){
-    return view('Addcomplaint');
-})->name('Complaint-add-form');
+// //prideti nauja nusiskundima
+// Route::get('/Addcomplaint', function(){
+//     return view('Addcomplaint');
+// })->name('Complaint-add-form');
 
-//prideda nauja atsiliepima
-Route::post('Addcomment/submit', 'CommentController@submit')->name('Comment-submit-form');
+// //prideda nauja atsiliepima
+// Route::post('Addcomment/submit', 'CommentController@submit')->name('Comment-submit-form');
 
 //prideda nauja nusiskundima
-Route::post('Addcomplaint/submit', 'ComplaintController@submit')->name('Complaint-submit-form');
+// Route::post('Addcomplaint/submit', 'ComplaintController@submit')->name('Complaint-submit-form');
 
 // Route::get('/Room', function() {
 //   return view('room');
 // })->name('room-page');
+
+Route::get('/Complaints', 'ComplaintController@index');
+
+Route::resource('Complaints', 'ComplaintController');
+
+Route::get('/Comments', 'CommentController@index');
+
+Route::resource('Comments', 'CommentController');
 
 // this will bind all contrller's action
 Route::resource('rooms', 'RoomController');
