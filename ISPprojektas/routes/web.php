@@ -12,33 +12,35 @@
 */
 
 
-Route::get('/', 'RoomController@getHome')->name('home');
-
-Route::get('/Profile', 'RoomController@getProfile')->name('profile');
-
-Route::get('/Registration', 'RoomController@getRegistration')->name('registration');
-
 Route::get('/rooms', 'RoomController@index');
+Route::resource('rooms', 'RoomController');
 
-// Route::get('/Profile', function () {
-//     return view('profile');
-// })->name('profile-window');
+// Route::get('/Profile', 'HomeController@getProfile')->name('profile');
+Route::get('/Profile', function () {
+    return view('profile');
+})->name('profile-window');
 
-//Route::resource('rooms', 'RoomController');
+Route::get('/', function () {
+    return view('home');
+})->name('main-Page');
 
-// Route::get('/Registration', function () {
-//     return view('registration');
-// })->name('registration-Form');
+//Nuolaidos trinimas
+//Route::delete('/Discount', 'DiscountController@destroy')->name('Delete');
+Route::get('/Discount/{id}','DiscountController@destroy');
 
-// Route::get('/', function () {
-//     return view('home');
-// })->name('main-Page');
+Route::get('/UpdateDiscount/{id}','DiscountController@edit');
 
-// Route::get('/Login', function () {
-//     return view('login');
-// })->name('login-Form');
+Route::post('update/{id_Nuolaida}','DiscountController@update');
+//Nuolaidu perziura
+Route::get('/Discounts', 'DiscountController@getNuolaidas')->name('Discounts');
 
-Route::get('/Login', 'RoomController@getLogin')->name('login');
+//Prideti Nuolaida
+Route::get('/AddDiscount', function(){
+    return view('AddDiscount');
+})->name('Discount-add-form');
+
+//prideda nauja nuolaida
+Route::post('AddDiscount/submit', 'DiscountController@submit')->name('Discount-submit-form');
 
 //Atsiliepimu perziura
 //Route::get('/Comments', 'CommentController@getAtsiliepimus')->name('get-Comments');
@@ -62,9 +64,9 @@ Route::get('/Login', 'RoomController@getLogin')->name('login');
 //prideda nauja nusiskundima
 // Route::post('Addcomplaint/submit', 'ComplaintController@submit')->name('Complaint-submit-form');
 
-Route::get('/Room', function() {
-  return view('room');
-})->name('room-page');
+// Route::get('/Room', function() {
+//   return view('room');
+// })->name('room-page');
 
 Route::get('/Complaints', 'ComplaintController@index');
 
@@ -79,6 +81,18 @@ Route::resource('rooms', 'RoomController');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/rooms', 'RoomController@show')->name('payment');
 
-//Route::get('/rooms', 'RoomController@show')->name('payment');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// User controller's routes
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:usersManagement')->group(function(){
+  Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'edit']]);
+});

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
   <!-- Required meta tags -->
@@ -22,41 +22,58 @@
 </head>
 
 <body>
-  <!-- Navbar -->
   <section class="navbar-spalva">
-      <nav class="navbar navbar-expand-md navbar-dark">
-        <a class="navbar-brand logo_font" href=""><span class="logo_KTU">KTU</span>HotelManagers</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="nav-padding collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link menu_items " href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link menu_items" href="/rooms">Rooms</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link menu_items" href="#pricing">Special orders</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link menu_items {{ Request::route()->getName() === 'profile' ? 'active' : '' }}" href="{{ route('profile') }}">Profile</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Login</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item {{ Request::route()->getName() === 'login' ? 'active' : '' }}" href="{{ route('login') }}">Log in</a>
-                <a class="dropdown-item {{ Request::route()->getName() === 'registration' ? 'active' : '' }}" href="{{ route('registration')}}">Sign up</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      @yield('search-field')
-  </section>
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <a class="navbar-brand logo_font" href=""><span class="logo_KTU">KTU</span>HotelManagers</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="nav-padding collapse navbar-collapse" id="navbarSupportedContent">
 
-  @include('inc.messeges')
+        <!-- Left Side Of Navbar -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link menu_items " href="/">Pagrindinis puslapis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu_items" href="/rooms">Kambariai</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu_items" href="#pricing">Pasiūlymai</a>
+          </li>
+          @guest
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">Prisijungti</a>
+          </li>
+          @if (Route::has('register'))
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('register') }}">Registruotis</a>
+          </li>
+          @endif
+          @else
+          <li class="nav-item">
+            <a class="nav-link menu_items {{ Request::route()->getName() === 'profile' ? 'active' : '' }}" href="{{ route('profile-window') }}">Profile</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Atsijungti
+              </a>
+          </li>
+              <!--  gates  -->
+              @can('usersManagement')
+              <li class="nav-item">
+              <a class="nav-link" href="{{route('admin.users.index')}}">Vartotojų langas</a>
+              </li>
+              @endcan
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+          @endguest
+        </ul>
+      </div>
+    </nav>
+    @yield('search-field')
+  </section>
   <!-- main section -->
   @yield('content')
 
@@ -74,6 +91,7 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
   <script src="{{asset('js\app.js')}}" charset="utf-8"></script>
-  </body>
 
-  </html>
+</body>
+
+</html>
