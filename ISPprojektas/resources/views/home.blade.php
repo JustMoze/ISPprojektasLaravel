@@ -26,6 +26,7 @@
       <p>Mes siulome tik pigiausius kambarius!</p>
     </div>
   </div>
+  <a href="{{route('rezervacijarezervacija.index')}}">Registracijas</a>
 </section>
 
 @include('sections.specialOffers')

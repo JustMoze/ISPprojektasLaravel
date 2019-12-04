@@ -39,6 +39,10 @@ Route::get('/AddDiscount', function(){
     return view('AddDiscount');
 })->name('Discount-add-form');
 
+Route::namespace('Rezervacija')->name('rezervacija')->group(function() {
+  Route::resource('/rezervacija', 'RezervacijaController');
+});
+
 //prideda nauja nuolaida
 Route::post('AddDiscount/submit', 'DiscountController@submit')->name('Discount-submit-form');
 
