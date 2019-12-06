@@ -34,6 +34,8 @@ Route::post('update/{id_Nuolaida}','DiscountController@update');
 //Nuolaidu perziura
 Route::get('/Discounts', 'DiscountController@getNuolaidas')->name('Discounts');
 
+Route::delete('/Profile/{user}', 'Admin\UsersController@deleteMyself')->name('deleteMySelf');
+
 //Prideti Nuolaida
 Route::get('/AddDiscount', function(){
     return view('AddDiscount');
@@ -45,6 +47,8 @@ Route::namespace('Rezervacija')->name('rezervacija')->group(function() {
 
 //prideda nauja nuolaida
 Route::post('AddDiscount/submit', 'DiscountController@submit')->name('Discount-submit-form');
+Route::get('profile/{user}/edit', 'Admin\UsersController@edit')->name('ProfileEdit');
+Route::put('profile/{user}', 'Admin\UsersController@updateUser')->name('updateUser');
 
 
 Route::post("/rezervacija", 'Rezervacija\RezervacijaController@storeByUser')->name('withUser');

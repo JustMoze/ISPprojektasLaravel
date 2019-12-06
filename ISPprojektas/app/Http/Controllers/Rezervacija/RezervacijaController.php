@@ -18,7 +18,7 @@ class RezervacijaController extends Controller
     public function index()
     {
         //
-        $rezarvacijos = Rezervacija::all();
+        $rezarvacijos = Rezervacija::orderBy('dateFrom')->get();
         // dd($rezarvacijos);
         return view('rezervacija')->with('rezervacijos', $rezarvacijos);
     }
