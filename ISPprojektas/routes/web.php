@@ -39,6 +39,10 @@ Route::get('/AddDiscount', function(){
     return view('AddDiscount');
 })->name('Discount-add-form');
 
+Route::namespace('Rezervacija')->name('rezervacija')->group(function() {
+  Route::resource('/rezervacija', 'RezervacijaController');
+});
+
 //prideda nauja nuolaida
 Route::post('AddDiscount/submit', 'DiscountController@submit')->name('Discount-submit-form');
 
@@ -53,10 +57,12 @@ Route::post('AddDiscount/submit', 'DiscountController@submit')->name('Discount-s
 //     return view('Addcomment');
 // })->name('Comment-add-form');
 
-// //prideti nauja nusiskundima
-// Route::get('/Addcomplaint', function(){
-//     return view('Addcomplaint');
-// })->name('Complaint-add-form');
+Route::post("/rezervacija", 'Rezervacija\RezervacijaController@storeByUser')->name('withUser');
+
+//prideti nauja nusiskundima
+Route::get('/Addcomplaint', function(){
+    return view('Addcomplaint');
+})->name('Complaint-add-form');
 
 // //prideda nauja atsiliepima
 // Route::post('Addcomment/submit', 'CommentController@submit')->name('Comment-submit-form');
@@ -85,7 +91,7 @@ Route::get('/search','RoomController@search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/rooms', 'RoomController@show')->name('payment');
+// Route::get('/payement', 'RoomController@show')->name('payment');
 
 Auth::routes();
 
