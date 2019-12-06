@@ -3,23 +3,97 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ComplaintRequest;
 use App\Models\Nusiskundimas;
 
 class ComplaintController extends Controller
 {
-    public function submit(ComplaintRequest $request){
-      $nusiskundimas = new Nusiskundimas();
-      $nusiskundimas->title = $request->input('title');
-      $nusiskundimas->message = $request->input('message');
-      $nusiskundimas->save();
-
-      return redirect()->route('home');
-    }
-
-    public function getNusiskundimai(){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
       $nusiskundimai = Nusiskundimas::all();
 
-      return view('Complaints', ['Nusiskundimai' => $nusiskundimai]);
+      return view('Complaints')->with('Nusiskundimai', $nusiskundimai);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('Addcomplaint');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+      $this->validate($request,
+        [
+          'title' => 'required',
+          'message' => 'required'
+        ]
+      );
+
+      $nusiskundimai = new Nusiskundimas();
+      $nusiskundimai->title = $request->input('title');
+      $nusiskundimai->message = $request->input('message');
+      $nusiskundimai->save();
+
+      return redirect('rooms')->with('success', 'Nusiskundimas sukurtas sėkmingai');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

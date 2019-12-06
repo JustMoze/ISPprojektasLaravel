@@ -35,6 +35,21 @@ class RoomController extends Controller
         return view('rooms')->with('rooms', $rooms);
     }
 
+    public function search()
+    {
+      if (request()->has('searchLine')) {
+        $line = request('searchLine');
+        $rooms = Room::where('apibudinimas', 'LIKE', '%'.$line.'%')
+        ->paginate(9)
+        ->appends('apibudinimas', request('searchLine'));
+      }
+      else{
+        $rooms = Room::paginate(9);
+      }
+      return view('rooms')->with('rooms', $rooms);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

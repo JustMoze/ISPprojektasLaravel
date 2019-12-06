@@ -13,6 +13,7 @@ class DiscountController extends Controller
       $nuolaida = new Nuolaida();
       $nuolaida->nuolaidos_dydis = $request->input('nuolaidos_dydis');
       $nuolaida->nuolaidos_tipas = $request->input('nuolaidos_tipas');
+      $nuolaida->kodas = $request->input('kodas');
       $nuolaida->save();
 
       return redirect()->route('Discounts');
@@ -53,7 +54,8 @@ class DiscountController extends Controller
     {
       $a1 = $request->input('nuolaidos_dydis');
       $a2 = $request->input('nuolaidos_tipas');
-      DB::update("UPDATE `nuolaidas` SET `nuolaidos_dydis`= '$a1' ,`nuolaidos_tipas`= '$a2' WHERE `id_Nuolaida`= '$id'");
+      $a3 = $request->input('kodas');
+      DB::update("UPDATE `nuolaidas` SET `nuolaidos_dydis`= '$a1' ,`nuolaidos_tipas`= '$a2', `kodas`='$a3' WHERE `id_Nuolaida`= '$id'");
 
      return redirect()->route('Discounts');
     }
