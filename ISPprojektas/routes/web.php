@@ -34,6 +34,8 @@ Route::post('update/{id_Nuolaida}','DiscountController@update');
 //Nuolaidu perziura
 Route::get('/Discounts', 'DiscountController@getNuolaidas')->name('Discounts');
 
+Route::delete('/Profile/{user}', 'Admin\UsersController@deleteMyself')->name('deleteMySelf');
+
 //Prideti Nuolaida
 Route::get('/AddDiscount', function(){
     return view('AddDiscount');

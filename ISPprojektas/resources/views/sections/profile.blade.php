@@ -10,7 +10,11 @@
       <h3>Vardas</h3>
       <h3>Pavarde</h3>
       <p>elektoninis@pastas.com</p>
-      <button class="btn btn-danger" type="button" name="button">Paskyros ištrinimas</button><br>
+      <form action="{{route('deleteMySelf', Auth::user()->getId())}}" method="post">
+            @csrf
+            {{method_field('DELETE')}}
+            <button type="submit" class="btn btn-danger" name="button">Ištrinti Paskyrą</button>
+        </form>
     </div>
   </div>
 </div>

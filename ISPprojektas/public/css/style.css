@@ -12,8 +12,23 @@ body {
 #title {
   background-color: #dfcdc3;
 }
+
+.invisible{
+  display:none;
+  visibility:hidden;
+}
+#Rezervuoti{
+  padding-top: 1%;
+}
+#Rezervacijulent{
+  margin: 1% auto;
+    width: 90%;
+  }
 .komentaruTable {
   margin: 2% 38%;
+}
+.rezervation-inputs {
+  margin-left: 2%;
 }
 #inlineFormCustomSelect {
   margin-left: 15%;

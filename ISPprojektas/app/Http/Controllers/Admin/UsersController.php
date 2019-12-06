@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -58,5 +59,14 @@ class UsersController extends Controller
         $user->roles()->detach();
         $user->delete();
         return redirect()->route('admin.users.index');
+    }
+    public function deleteMyself($id)
+    {
+      $user = User::find($id);
+      $user->roles()->detach();
+      $user->Rezervacijos()->delete();
+      $user->delete();
+      Auth::logout();
+      return redirect()->view('home');
     }
 }
