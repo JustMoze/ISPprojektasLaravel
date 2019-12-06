@@ -67,7 +67,7 @@ class RezervacijaController extends Controller
         foreach ($rezervacijos as $kambario_rezervacija) {
           //
             // code...
-            if ($kambario_rezervacija->dateFrom > $dateFrom && $kambario_rezervacija->dateFrom < $dateTo || $kambario_rezervacija->dateFrom < $dateFrom && $kambario_rezervacija->dateTo > $dateTo || $kambario_rezervacija->dateTo > $dateFrom && $kambario_rezervacija->dateTo < $dateTo || $dateFrom > $dateTo) {
+            if ($kambario_rezervacija->dateFrom >= $dateFrom && $kambario_rezervacija->dateFrom <= $dateTo || $kambario_rezervacija->dateFrom <= $dateFrom && $kambario_rezervacija->dateTo >= $dateTo || $kambario_rezervacija->dateTo >= $dateFrom && $kambario_rezervacija->dateTo <= $dateTo || $dateFrom >= $dateTo) {
               $free = false;
             }
         }
