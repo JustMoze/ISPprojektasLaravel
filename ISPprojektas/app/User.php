@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Rezervacija;
 
 class User extends Authenticatable
 {
@@ -50,6 +51,10 @@ class User extends Authenticatable
       }
       return false;
     }
+    public function getId()
+    {
+      return $this->id;
+    }
 
     public function hasAnyRoles($roles)
     {
@@ -58,5 +63,9 @@ class User extends Authenticatable
         return true;
       }
       return false;
+    }
+    public function Rezervacijos()
+    {
+    	return $this->hasMany(Rezervacija::class);
     }
 }
