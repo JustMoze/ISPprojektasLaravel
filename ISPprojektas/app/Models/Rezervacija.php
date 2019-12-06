@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Models\Room;
+use App\Models\Payment;
 class Rezervacija extends Model
 {
   public function User()
@@ -14,5 +15,9 @@ class Rezervacija extends Model
   public function Room()
   {
     return $this->belongsTo(Room::class);
+  }
+  public function payment()
+  {
+    return $this->hasOne(Payment::class);
   }
 }

@@ -84,3 +84,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:usersManagement')->group(function(){
   Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'edit']]);
 });
+
+Route::namespace('Payments')->group(function(){
+  Route::resource('/payments', 'PaymentController');
+});
+
+Route::get('/payments', 'Payments\PaymentController@showPayment')->name('payment-page');
+Route::get('/payments', 'Payments\PaymentController@updatePayment')->name('payment-update');

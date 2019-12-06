@@ -57,6 +57,7 @@ class RezervacijaController extends Controller
         //
 
         $rezervacija = new Rezervacija();
+        $rez_id = $rezervacija->id;
         $dateFrom = $request->input('DateFrom');
         $dateTo = $request->input('DateTo');
         $user_id = $request->input('user_id');
@@ -77,7 +78,7 @@ class RezervacijaController extends Controller
         $rezervacija->user_id = $user_id;
         $rezervacija->room_id = $room_id;
         $rezervacija->save();
-        return redirect()->route('rezervacijarezervacija.index');
+        return redirect()->route('payment-page', ['rez_id' => $rez_id, 'dateTo' => $dateTo, 'dateFrom' => $dateFrom, 'user_id' => $user_id, 'room_id' => $room_id]);
       }
       else{
         return redirect()->route('rezervacijarezervacija.index');

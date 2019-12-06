@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/b6e025948a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/paymentStyle.css')}}">
   <link rel="icon" href="favicon.ico">
   <title>KTU hotel managers</title>
 </head>
@@ -76,7 +77,8 @@
   </section>
   <!-- main section -->
   @yield('content')
-
+  @yield('UserName')
+  @yield('roomInfo')
   <!-- Footer -->
   <footer id="footer" class="container-fluid">
     <i class="footer-icon-line fab fa-twitter fa-2x"></i>

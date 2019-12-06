@@ -170,7 +170,11 @@ body {
 .rooms_btn:hover {
   background-color: #ec9b3b;
 }
-
+.h4-payment {
+  margin-bottom: 5%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
 /* spec offers  */
 .Spec_offers {
   background-color: #393e46;
