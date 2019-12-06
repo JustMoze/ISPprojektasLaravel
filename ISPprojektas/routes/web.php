@@ -57,6 +57,8 @@ Route::get('/Addcomment', function(){
     return view('Addcomment');
 })->name('Comment-add-form');
 
+Route::post("/rezervacija", 'Rezervacija\RezervacijaController@storeByUser')->name('withUser');
+
 //prideti nauja nusiskundima
 Route::get('/Addcomplaint', function(){
     return view('Addcomplaint');
@@ -78,7 +80,7 @@ Route::resource('rooms', 'RoomController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/rooms', 'RoomController@show')->name('payment');
+// Route::get('/payement', 'RoomController@show')->name('payment');
 
 Auth::routes();
 

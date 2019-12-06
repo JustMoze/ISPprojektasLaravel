@@ -51,6 +51,10 @@ class User extends Authenticatable
       }
       return false;
     }
+    public function getId()
+    {
+      return $this->id;
+    }
 
     public function hasAnyRoles($roles)
     {

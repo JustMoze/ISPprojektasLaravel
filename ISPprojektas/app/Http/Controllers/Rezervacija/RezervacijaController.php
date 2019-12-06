@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Rezervacija;
 use Illuminate\Http\Request;
 use App\Models\Rezervacija;
 use App\Http\Controllers\Controller;
+use App\Models\Room;
+use App\Http\Requests\RezervationRequest;
 
 class RezervacijaController extends Controller
 {
@@ -26,6 +28,13 @@ class RezervacijaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function compare($id)
+     {
+
+       $room = Room::find($id);
+       dd($room);
+
+     }
     public function create()
     {
         //
@@ -40,8 +49,41 @@ class RezervacijaController extends Controller
     public function store(Request $request)
     {
         //
-    }
+        $rezervacija = new Rezervacija();
 
+    }
+    public function storeByUser(Request $request)
+    {
+        //
+
+        $rezervacija = new Rezervacija();
+        $dateFrom = $request->input('DateFrom');
+        $dateTo = $request->input('DateTo');
+        $user_id = $request->input('user_id');
+        $room_id = $request->input('room_id');
+
+        $rezervacijos = Room::find($room_id)->Rezervacijos;
+        $free = true;
+        foreach ($rezervacijos as $kambario_rezervacija) {
+          //
+            // code...
+            if ($kambario_rezervacija->dateFrom > $dateFrom && $kambario_rezervacija->dateFrom < $dateTo || $kambario_rezervacija->dateFrom < $dateFrom && $kambario_rezervacija->dateTo > $dateTo || $kambario_rezervacija->dateTo > $dateFrom && $kambario_rezervacija->dateTo < $dateTo || $dateFrom > $dateTo) {
+              $free = false;
+            }
+        }
+        if($free){
+        $rezervacija->dateFrom = $dateFrom;
+        $rezervacija->dateTo = $dateTo;
+        $rezervacija->user_id = $user_id;
+        $rezervacija->room_id = $room_id;
+        $rezervacija->save();
+        return redirect()->route('rezervacijarezervacija.index');
+      }
+      else{
+        return redirect()->route('rezervacijarezervacija.index');
+      }
+
+    }
     /**
      * Display the specified resource.
      *
