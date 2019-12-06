@@ -47,7 +47,8 @@ Route::namespace('Rezervacija')->name('rezervacija')->group(function() {
 
 //prideda nauja nuolaida
 Route::post('AddDiscount/submit', 'DiscountController@submit')->name('Discount-submit-form');
-
+Route::get('profile/{user}/edit', 'Admin\UsersController@edit')->name('ProfileEdit');
+Route::put('profile/{user}', 'Admin\UsersController@updateUser')->name('updateUser');
 //Atsiliepimu perziura
 //Route::get('/Comments', 'CommentController@getAtsiliepimus')->name('get-Comments');
 
