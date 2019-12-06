@@ -96,6 +96,7 @@ class PaymentController extends Controller
         $payment->cardName = $request->input('username');
         $payment->date = $request->input('expireDate');
 
+
         $message->save();
         return redirect()->route('home')->with('success', 'Pranešimas sėkmingai buvo išsiūstas');
     }
