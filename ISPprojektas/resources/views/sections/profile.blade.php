@@ -4,13 +4,17 @@
     <div class="col-lg-3">
       <h6>Profile picture</h4>
       <img class="code-img" src="images/avatar.png" alt="">
-      <button class=" btn btn-primary btn-sm" type="button" name="button"><i class="fas fa-edit"> Edit</i></button>
+      <a href="{{route('ProfileEdit', Auth::user()->getId())}}" class=" btn btn-primary btn-sm" type="button" name="button"><i class="fas fa-edit"> Edit</i></a>
     </div>
     <div class="col-lg-9">
       <h3>Vardas</h3>
       <h3>Pavarde</h3>
       <p>elektoninis@pastas.com</p>
-      <button class="btn btn-danger" type="button" name="button">Paskyros ištrinimas</button><br>
+      <form action="{{route('deleteMySelf', Auth::user()->getId())}}" method="post">
+            @csrf
+            {{method_field('DELETE')}}
+            <button type="submit" class="btn btn-danger" name="button">Ištrinti Paskyrą</button>
+        </form>
     </div>
   </div>
 </div>
