@@ -4,9 +4,9 @@
   <div class="col-lg-4 col-md-4 col-sm-6">
   </div>
   <div class="col-lg-4 col-md-4 col-sm-12 search_col">
-    <form class="form-inline md-form form-sm">
-      <input class="form-control form-control-sm mr-3 w-75" type="search" placeholder="Search" aria-label="Search">
-      <button type="button" name="button" class="search_button"><i class="fas fa-search" aria-hidden="true"></i> Search</button>
+    <form method="get" action="/search" class="form-inline md-form form-sm" >
+      <input class="form-control form-control-sm mr-3 w-75" name="searchLine" type="search" placeholder="Search" aria-label="Search">
+      <button type="submit" name="button" class="search_button"><i class="fas fa-search" aria-hidden="true"></i> Search</button>
     </form>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-12">
@@ -59,6 +59,11 @@
             </div>
           </div>
         @endforeach
+        <?php
+        $max = sizeof($rooms);
+         if($max <= 0){
+           echo "<h1>Nerastas nei vienas kambarys.</h1>";
+         } ?>
         <div class="pagination">
           {{ $rooms->links() }}
         </div>

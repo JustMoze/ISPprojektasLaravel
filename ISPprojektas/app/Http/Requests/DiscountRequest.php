@@ -25,13 +25,15 @@ class DiscountRequest extends FormRequest
     {
         return [
             'nuolaidos_dydis' => 'required',
-            'nuolaidos_tipas' => 'required'
+            'nuolaidos_tipas' => 'required',
+            'kodas' => 'required'
         ];
     }
     public function messages(){
       return[
         'nuolaidos_dydis.required' => 'Nuolaidos dydis yra privalomas',
-        'nuolaidos_tipas.required' => 'Nuolaidos tipas yra privalomas'
+        'nuolaidos_tipas.required' => 'Nuolaidos tipas yra privalomas',
+        'kodas.required' => 'Kodas yra privalomas',
       ];
     }
   }

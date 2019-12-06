@@ -79,6 +79,9 @@ Route::resource('Comments', 'CommentController');
 // this will bind all contrller's action
 Route::resource('rooms', 'RoomController');
 
+Route::get('/search','RoomController@search');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

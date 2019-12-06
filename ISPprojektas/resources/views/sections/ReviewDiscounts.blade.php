@@ -5,6 +5,7 @@
       <tr>
         <th>Nuolaidos Dydis</th>
         <th>Nuolaidos Tipas</th>
+        <th>Nuolaidos Kodas</th>
         <th></th>
         <th></th>
       </tr>
@@ -19,6 +20,7 @@
         echo "<td>Procentai</td>";
       }
       ?>
+      <td>{{ $Nuolaida->kodas}}</td>
     <td><a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{URL::to('/Discount/'.$Nuolaida->id_Nuolaida) }}"><i class="fa fa-trash"></i></a></td>
     <td><a class="btn btn-primary" href="{{URL::to('/UpdateDiscount/'.$Nuolaida->id_Nuolaida) }}">Update</a></td>
     </tr>

@@ -17,7 +17,7 @@
           <input value = {{ $nuolaida->nuolaidos_dydis }}  type="text" class="form-control" name="nuolaidos_dydis" id="nuolaidos_dydis"  placeholder="Enter Discount amount">
         </div>
         <div class="form-group">
-          <label for="message">Discount Type</label>
+          <label for="message">Nuolaidos Tipas</label>
           <select class="form-control" id="nuolaidos_tipas" name="nuolaidos_tipas">
             <?php
             $aa = $nuolaida->nuolaidos_tipas;
@@ -32,7 +32,10 @@
             <option value="1">Eurai</option>
             <option value="2">Procentai</option>
           </select>
-
+        </div>
+        <div class="form-group">
+          <label for="title" >Nuolaidos Kodas</label>
+          <input value = {{ $nuolaida->kodas }}  type="text" class="form-control" name="kodas" id="kodas"  placeholder="Enter Code for Discount">
         </div>
         <button  name="submit" type="submit" class="btn btn-primary">Submit</button>
       </form>

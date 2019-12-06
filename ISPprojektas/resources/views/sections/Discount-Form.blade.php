@@ -14,15 +14,18 @@
         @csrf
         <div class="form-group">
           <label for="title" >Nuolaidos Dydis</label>
-          <input type="text" class="form-control" name="nuolaidos_dydis" id="nuolaidos_dydis"  placeholder="Enter Discount amount">
+          <input type="text" class="form-control" name="nuolaidos_dydis" id="nuolaidos_dydis"  placeholder="Iveskite nuolaidos dydį">
         </div>
         <div class="form-group">
-          <label for="message">Discount Type</label>
+          <label for="message">Nuolaidos Tipas</label>
           <select class="form-control" id="nuolaidos_tipas" name="nuolaidos_tipas">
             <option value="1">Eurai</option>
             <option value="2">Procentai</option>
           </select>
-
+        </div>
+        <div class="form-group">
+          <label for="title" >Nuolaidos Kodas</label>
+          <input type="text" class="form-control" name="kodas" id="kodas"  placeholder="Iveskite Nuolaidos Koda">
         </div>
         <button  type="submit" class="btn btn-primary">Submit</button>
       </form>
