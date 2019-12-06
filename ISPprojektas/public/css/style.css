@@ -15,6 +15,11 @@ body {
 .komentaruTable {
   margin: 2% 38%;
 }
+.roomPageNavbar {
+  margin-top: -2%;
+  padding-bottom: 2%;
+  padding-top: 1%;
+}
 #inlineFormCustomSelect {
   margin-left: 15%;
   width: 87%;
