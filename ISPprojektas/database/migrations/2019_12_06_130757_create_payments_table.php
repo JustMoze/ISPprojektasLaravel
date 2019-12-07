@@ -14,10 +14,9 @@ class CreatePaymentsTable extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('user_id')->unsigned();
-            $table->unsignedBigInteger('rezervation_id')->unsigned()->nullable();
-            $table->foreign('rezervation_id')->references('id')->on('rezervacijas')->onDelete('cascade');;
+            $table->increments('id');
+            $table->unsignedBigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('cardCode');
             $table->integer('cvv');
             $table->string('cardName');

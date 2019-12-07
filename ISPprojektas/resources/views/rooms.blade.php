@@ -70,3 +70,6 @@
     </div>
 </section>
 @endsection
+@section('lowFooter')
+  footer-main
+@endsection

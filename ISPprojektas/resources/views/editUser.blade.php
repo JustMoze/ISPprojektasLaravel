@@ -160,3 +160,6 @@
       </div>
     </div>
 @endsection
+@section('lowFooter')
+  footer-main
+@endsection

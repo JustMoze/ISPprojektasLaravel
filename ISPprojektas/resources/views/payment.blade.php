@@ -1,16 +1,11 @@
 @extends('layouts.app')
+@section('bodyColor')
+  body-Payment
+@endsection
 @section('content')
 <div class="container py-5">
   <!-- For demo purpose -->
-  <div class="row mb-4">
-    <div class="col-lg-8 mx-auto text-center">
-      <h1 class="display-4">@yield('UserName')</h1>
-      <p class="lead mb-0">@yield('roomInfo')</p>
-    </div>
-  </div>
   <!-- End -->
-
-
   <div class="row paymentPage">
     <div class="col-lg-7 mx-auto">
       <div class="bg-white rounded-lg shadow-sm p-5">
@@ -28,15 +23,18 @@
         </ul>
         <!-- End -->
 
-
         <!-- Credit card form content -->
         <div class="tab-content">
 
           <!-- credit card info-->
           <div id="nav-tab-card" class="tab-pane fade show active">
-            <form method="post" action="{{route('payment-update', $room_id, $rez_id, $user_id)}}">
+            <form method="post" action="{{route('payment-update')}}">
               @csrf
-              {{method_field('PUT')}}
+              {{ method_field('GET') }}
+              <input type="hidden" name="userID" value="{{$user_id}}">
+              <input type="hidden" name="roomID" value="{{$room_id}}">
+              <input type="hidden" name="dateTo" value="{{$dateTo}}">
+              <input type="hidden" name="dateFrom" value="{{$dateFrom}}">
               <div class="form-group">
                 <label for="username">Kreditinės kortelės vardas</label>
                 <input type="text" name="username" placeholder="@yield('placeholder1')" required class="form-control">
@@ -71,11 +69,8 @@
                     <input type="text" required class="form-control">
                   </div>
                 </div>
-
-
-
               </div>
-              <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm </button>
+              <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm </button>
             </form>
           </div>
           <!-- End -->
@@ -84,4 +79,8 @@
       </div>
     </div>
   </div>
+  </div>
+@endsection
+@section('lowFooter')
+  footer-main
 @endsection

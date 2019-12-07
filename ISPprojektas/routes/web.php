@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/rooms', 'RoomController@index');
+Route::get('/rooms', 'RoomController@index')->name('rooms-page');
 Route::resource('rooms', 'RoomController');
 
 // Route::get('/Profile', 'HomeController@getProfile')->name('profile');
@@ -50,8 +50,12 @@ Route::post('AddDiscount/submit', 'DiscountController@submit')->name('Discount-s
 Route::get('profile/{user}/edit', 'Admin\UsersController@edit')->name('ProfileEdit');
 Route::put('profile/{user}', 'Admin\UsersController@updateUser')->name('updateUser');
 
-
-Route::post("/rezervacija", 'Rezervacija\RezervacijaController@storeByUser')->name('withUser');
+Route::get("/kambarioRezervacija", 'Rezervacija\RezervacijaController@rezervationChecker')->name('rezervationComplete');
+// Route::get('kambarioRezervacija', array('as' => 'rezervationComplete', 'uses' => 'Rezervacija\RezervacijaController@rezervationChecker', function($user_id, $room_id)
+// {
+//     //
+// }));
+Route::post("/kambario", 'Rezervacija\RezervacijaController@storeDate')->name('withUser');
 //prideti nauja nusiskundima
 Route::get('/Addcomplaint', function(){
     return view('Addcomplaint');
@@ -77,13 +81,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/payement', 'RoomController@show')->name('payment');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 // User controller's routes
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:usersManagement')->group(function(){
   Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'edit']]);
@@ -93,5 +90,10 @@ Route::namespace('Payments')->group(function(){
   Route::resource('/payments', 'PaymentController');
 });
 
-Route::get('/payments', 'Payments\PaymentController@showPayment')->name('payment-page');
-Route::get('/payments', 'Payments\PaymentController@updatePayment')->name('payment-update');
+Route::get('/payment', 'Payments\PaymentController@showPayment')->name('payment-page');
+//Route::get('/paymentai', 'Payments\PaymentController@saveCardData')->name('payment-update');
+Route::get('paymentai', array('as' => 'payment-update', 'uses' => 'Payments\PaymentController@saveCardData', function($user_id, $room_id)
+{
+    //
+}));
+Route::get('myRezervations', 'Rezervacija\RezervacijaController@myRezervations')->name('my-rezervations');

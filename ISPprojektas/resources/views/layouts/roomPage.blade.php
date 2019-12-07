@@ -35,9 +35,6 @@
           <li class="nav-item">
             <a class="nav-link menu_items" href="/rooms">Kambariai</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link menu_items" href="#pricing">Pasiūlymai</a>
-          </li>
           @guest
           <li class="nav-item">
             <a class="nav-link" href="{{ route('login') }}">Prisijungti</a>
@@ -85,6 +82,7 @@
         @yield('reserve')
       </div>
     </div>
+    @can('User')
     <div class="row second-row">
       <div class="col-sm-1.5 col-md-1.5 col-lg-1.5">
         <button type="button" class="btn btn-outline rate-btn"><i class="fas fa-star star fa-1.5x"></i><a href="/Comments/create">Įvertinti</a></button>
@@ -95,6 +93,7 @@
         <button type="button" class="btn btn-outline rate-btn btn-dark"><i ></i><a href="/Complaints">Nusiskundimai</a></button>
       </div>
     </div>
+    @endcan
   </div>
 
 

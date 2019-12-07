@@ -28,9 +28,21 @@ class PaymentController extends Controller
        $user_id = $request->get('user_id');
        $room_id = $request->get('room_id');
        $rez_id = $request->get('rez_id');
-       $room = Room::find($room_id);
        $user = User::find($user_id);
+       $room = Room::find($room_id);
        return view('payment', ['rez_id' => $rez_id, 'user' => $user, 'room' => $room, 'dateTo' => $dateTo, 'dateFrom' => $dateFrom, 'user_id' => $user_id, 'room_id' => $room_id]);
+    }
+    public function saveCardData(Request $request)
+    {
+      $cardName = $request->input('username');
+      $cardNumber = $request->input('cardNumber');
+      $expirationDate = $request->input('expireDate');
+      $cvv = $request->input('cvv');
+      $user_id = $request->input('userID');
+      $room_id = $request->input('roomID');
+      $dateFrom = $request->input('dateFrom');
+      $dateTo = $request->input('dateTo');
+      return redirect()->route('rezervationComplete', ['dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'cardName' => $cardName, 'cardNumber' => $cardNumber, 'expirationDate' => $expirationDate,  'cvv' => $cvv, 'user_id' => $user_id, 'room_id' => $room_id]);
     }
     /**
      * Show the form for creating a new resource.
@@ -74,33 +86,6 @@ class PaymentController extends Controller
     {
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function updatePayment(Request $request, $room_id, $rez_id, $user_id)
-    {
-        //
-        $user = User::find($user_id);
-        $room = Room::find($room_id);
-        $payment = new Payment();
-
-        $payment->user_id = $user_id;
-        $payment->rezervation_id = $rez_id;
-        $payment->cardCode = $request->input('cardNumber');
-        $payment->cvv = $request->input('cvv');
-        $payment->cardName = $request->input('username');
-        $payment->date = $request->input('expireDate');
-
-
-        $message->save();
-        return redirect()->route('home')->with('success', 'Pranešimas sėkmingai buvo išsiūstas');
-    }
-
     /**
      * Remove the specified resource from storage.
      *

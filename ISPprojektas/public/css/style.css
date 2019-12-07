@@ -1,412 +1,523 @@
 h3 {
-  font-family: "Montserrat-bold", sans-serif;
+    font-family: "Montserrat-bold", sans-serif;
 }
+
 p {
-  color: #8f8f8f;
+    color: #8f8f8f;
 }
+
 body {
-  font-family: 'Montserrat', sans-serif;
-  /* text-align: center; */
+    font-family: 'Montserrat', sans-serif;
+    /* text-align: center; */
 }
+
 /********************* ID indikators ******************************/
 #title {
-  background-color: #dfcdc3;
+    background-color: #dfcdc3;
 }
-.gender-input
-{
-  margin-left: 19%;
+
+.gender-input {
+    margin-left: 19%;
 }
+
 .gender-label {
-  padding-right: 5%;
+    padding-right: 5%;
 }
-.invisible{
-  display:none;
-  visibility:hidden;
+
+.invisible {
+    display: none;
+    visibility: hidden;
 }
-#Rezervuoti{
-  padding-top: 1%;
+
+#Rezervuoti {
+    padding-top: 1%;
 }
-#Rezervacijulent{
-  margin: 1% auto;
+
+#Rezervacijulent {
+    margin: 1% auto;
     width: 90%;
-  }
+}
+
 .komentaruTable {
-  margin: 2% 38%;
+    margin: 2% 38%;
 }
+
 .roomPageNavbar {
-  margin-top: -2%;
-  padding-bottom: 2%;
-  padding-top: 1%;
+    margin-top: -2%;
+    padding-bottom: 2%;
+    padding-top: 1%;
 }
+
 .rezervation-inputs {
-  margin-left: 2%;
-}
-#inlineFormCustomSelect {
-  margin-left: 15%;
-  width: 87%;
-  background-color: #dbe2ef;
-}
-#inlineFormCustomSelect_1 {
-  width: 87%;
-    background-color: #dbe2ef;
-}
-#showcase{
-	min-height: 400px;
-	background: url("../images/show2.jpg") no-repeat 0 100px;
-	background-position: bottom;
-	text-align: center;
-	color: #ffffff;
-  border: 1px solid black;
-}
-#showcase h1{
-  padding-top: 145px;
-  font-family: 'Indie Flower', cursive;
-  font-size: 5rem;
-}
-/********************* Class indikators ****************************/
-/* Logo */
-
-/* Navbar styles */
-.navbar_hrefs {
-  font-size: 1.3rem;
-}
-.heading {
-  font-family: 'Montserrat-Thin', sans-serif;
-  font-size: 2rem;
-  line-height: 1.2;
-}
-.search_div {
-  background-color: #3f72af;
+    margin-left: 2%;
 }
 
-.logo_font {
-  font-family: "Oswald", cursive;
-  padding-left: 1%;
-  font-size: 2.5rem;
-  letter-spacing: 3px;
+.table-color {
+    background-color: #ffde7d;
 }
 
-.logo_KTU {
-  font-size: 3rem;
-  font-family: 'Indie Flower', cursive;
-  color: #f7be16;
-}
-/* Navbar styles */
-
-.navbar-spalva{
-  background-color: #3f72af;
-  color: #fff;
+.table-modules {
+    border: 3px solid;
 }
 
-.nav-padding{
-  padding-right: 7%;
-  font-weight: 900;
-  font-size: 1.2rem;
+.image-cont {
+    text-align: center;
+    padding-bottom: 5%;
 }
-.search_col {
-    margin-bottom: 1rem;
-}
-.search_button {
-  background-color: #dbe2ef;
-  border-radius: 5%;
-}
-.fillter_button: {
-  width: 108px;
-  margin-left: 15%;
-}
-/* top Container with main picture */
-.container-fluid{
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.Main_picture {
-  width: 100%;
-  height: 15%;
-}
-/* features */
-#features {
-  padding: 3% 15%;
-  text-align: center;
-}
-.feature-box {
-  padding: 5%;
-}
-/* icons */
-.icons {
-  margin-bottom: 1.5rem;
-  color: #112d4e;
-}
-.icons:hover {
-  color: #ec9b3b;
-}
-
-/* Testimonial section */
-#testimonials {
-  padding: 7% 15%;
-}
-.foto-mg {
-  text-align: left;
-  margin: 2%;
-}
-.remove-room-btn {
-  text-align: right;
-}
-.room-photo{
-  width: 100%;
-}
-.room-info {
-  font-size: 2rem;
-  font-family: 'Lobster', cursive;
-}
-.nav-padding {
-  padding-top: 2%;
-  margin-top: -2%;
-}
-/* Room cards */
-
-#press {
-  background-color: #dff6f0;
-}
-
-.pricing{
-  padding: 50px;
-  font-family: "Oswald";
-  text-align: center;
-}
-
-.card-img img{
-  max-width: 100%;
-  height: 250px;
-}
-
-.pricing-cards{
-  padding: 3% 2%;
-}
-
-.color-room{
-  background-color: #c0ffb3;
-}
-
-.rooms_btn:hover {
-  background-color: #ec9b3b;
-}
-.h4-payment {
-  margin-bottom: 5%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-}
-/* spec offers  */
-.Spec_offers {
-  background-color: #393e46;
-  border: 1px solid;
-  text-align: center;
-}
-.card-header{
-  background-color: #3f72af;
-}
-.spec_off_1 {
-  margin: 2% 15%;
-  font-size: 2.5rem;
-  color: white;
-}
-.spec_off_2 {
-  font-size: 1.5rem;
-}
-
-.spec_ord_buttons:hover{
-  background-color: #ec9b3b;
-}
-.spec_off_img {
-  width: 70%;
-  height: 50%;
-}
-/* Footer */
-#footer {
+.lowerFooter {
   width: 100%;
   background-color: #dbe2ef;
   padding-bottom: 3%;
   text-align: center;
-  margin-top: 7%;
+  margin-top: 31%;
 }
+.first-col-table {
+    padding-top: 10%;
+    padding-left: 2%;
+}
+
+.myRezervations {
+    width: 70%;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.myRezervations-body {
+    background-image: url(https://wallpaperaccess.com/full/276137.jpg);
+}
+
+.body-Payment {
+    background-image: url(https://linkedinbackground.com/download/xNew-York-Midtown.jpg.pagespeed.ic.yob8ZQQHcO.jpg);
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+
+#inlineFormCustomSelect {
+    margin-left: 15%;
+    width: 87%;
+    background-color: #dbe2ef;
+}
+
+#inlineFormCustomSelect_1 {
+    width: 87%;
+    background-color: #dbe2ef;
+}
+
+#showcase {
+    min-height: 400px;
+    background: url("../images/show2.jpg") no-repeat 0 100px;
+    background-position: bottom;
+    text-align: center;
+    color: #ffffff;
+    border: 1px solid black;
+}
+
+#showcase h1 {
+    padding-top: 145px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 5rem;
+}
+
+/********************* Class indikators ****************************/
+/* Logo */
+/* Navbar styles */
+.navbar_hrefs {
+    font-size: 1.3rem;
+}
+
+.heading {
+    font-family: 'Montserrat-Thin', sans-serif;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.search_div {
+    background-color: #3f72af;
+}
+
+.logo_font {
+    font-family: "Oswald", cursive;
+    padding-left: 1%;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+}
+
+.logo_KTU {
+    font-size: 3rem;
+    font-family: 'Indie Flower', cursive;
+    color: #f7be16;
+}
+
+/* Navbar styles */
+.navbar-spalva {
+    background-color: #3f72af;
+    color: #fff;
+}
+
+.nav-padding {
+    padding-right: 7%;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.search_col {
+    margin-bottom: 1rem;
+}
+
+.search_button {
+    background-color: #dbe2ef;
+    border-radius: 5%;
+}
+
+.fillter_button: {
+    width: 108px;
+    margin-left: 15%;
+}
+
+/* top Container with main picture */
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.Main_picture {
+    width: 100%;
+    height: 15%;
+}
+
+/* features */
+#features {
+    padding: 3% 15%;
+    text-align: center;
+}
+
+.feature-box {
+    padding: 5%;
+}
+
+/* icons */
+.icons {
+    margin-bottom: 1.5rem;
+    color: #112d4e;
+}
+
+.icons:hover {
+    color: #ec9b3b;
+}
+
+/* Testimonial section */
+#testimonials {
+    padding: 7% 15%;
+}
+
+.foto-mg {
+    text-align: left;
+    margin: 2%;
+}
+
+.remove-room-btn {
+    text-align: right;
+}
+
+.room-photo {
+    width: 100%;
+}
+
+.room-info {
+    font-size: 2rem;
+    font-family: 'Lobster', cursive;
+}
+
+.nav-padding {
+    padding-top: 2%;
+    margin-top: -2%;
+}
+
+/* Room cards */
+#press {
+    background-color: #dff6f0;
+}
+
+.pricing {
+    padding: 50px;
+    font-family: "Oswald";
+    text-align: center;
+}
+
+.card-img img {
+    max-width: 100%;
+    height: 250px;
+}
+
+.pricing-cards {
+    padding: 3% 2%;
+}
+
+.color-room {
+    background-color: #c0ffb3;
+}
+
+.rooms_btn:hover {
+    background-color: #ec9b3b;
+}
+
+.h4-payment {
+    margin-bottom: 5%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+}
+
+/* spec offers  */
+.Spec_offers {
+    background-color: #393e46;
+    border: 1px solid;
+    text-align: center;
+}
+
+.card-header {
+    background-color: #3f72af;
+}
+
+.spec_off_1 {
+    margin: 2% 15%;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.spec_off_2 {
+    font-size: 1.5rem;
+}
+
+.spec_ord_buttons:hover {
+    background-color: #ec9b3b;
+}
+
+.spec_off_img {
+    width: 70%;
+    height: 50%;
+}
+
+/* Footer */
+.footer-main {
+    width: 100%;
+    background-color: #dbe2ef;
+    padding-bottom: 3%;
+    text-align: center;
+    margin-top: 7%;
+}
+
 #cta {
-  width: 100%;
-  background-color: #3f72af;
+    width: 100%;
+    background-color: #3f72af;
+}
+.myRezervations-back {
+  position: absolute;
+  left: 77.5%;
+
 }
 /* Fotter's part */
 .footer-title {
-  margin: 0% 15% 2%;
-  padding-top: 3%;
-  font-size: 3rem;
-  color: white;
+    margin: 0% 15% 2%;
+    padding-top: 3%;
+    font-size: 3rem;
+    color: white;
+    font-style: 'Montserrat-Black', sans-serif;
+}
+.myRezervations-h1 {
+  font-size: 4rem;
+  color: black;
+  font-style: 'Montserrat-Black', sans-serif;
+  padding-bottom: 5%;
+}
+.mainRezerv-row {
+  text-align: center;
+}
+.myRezervations-h2 {
+  font-size: 2.7rem;
+  color: black;
   font-style: 'Montserrat-Black', sans-serif;
 }
 .footer-button {
-  margin: 0% 1% 5%;
+    margin: 0% 1% 5%;
+}
+.myRezervIcon {
+  padding-bottom: 1.5%;
 }
 .footer-icon-line {
-  margin: 5% 1% 2%;
+    margin: 5% 1% 2%;
 }
+
 .footer-button2:hover {
-  background-color: #cbf1f5;
-  border: 2px solid #71c9ce;
-  margin: auto;
-  text-align: center;
-  padding: 15% 10px;
+    background-color: #cbf1f5;
+    border: 2px solid #71c9ce;
+    margin: auto;
+    text-align: center;
+    padding: 15% 10px;
 }
 
 /* Login and Registration section */
-
-.main{
-  background-color: #fcf9ea;
+.main {
+    background-color: #fcf9ea;
 }
 
-.form-signin{
-  width: 100%;
-  max-width: 70%;
-  padding: 7% 10px;
-  margin: auto;
+.form-signin {
+    width: 100%;
+    max-width: 70%;
+    padding: 7% 10px;
+    margin: auto;
 }
+
 .regin-padding {
     padding: 2%;
 }
-.form-control-pad{
-  padding-top: 1%;
-  padding-bottom: 1%;
+
+.form-control-pad {
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
-.check-left label{
-  margin-right: 50%;
+.check-left label {
+    margin-right: 50%;
 }
+
 .foto-mg {
-  text-align: left;
-  margin: 2%;
+    text-align: left;
+    margin: 2%;
 }
+
 .remove-room-btn {
-  text-align: right;
+    text-align: right;
 }
-.room-photo{
-  width: 100%;
+
+.room-photo {
+    width: 100%;
 }
+
 .room-info {
-  font-size: 2rem;
+    font-size: 2rem;
 }
+
 .nav-padding {
-  padding-top: 2%;
-  margin-top: -2%;
+    padding-top: 2%;
+    margin-top: -2%;
 }
+
 .registration-label {
-  margin-top: 2%;
-  margin-bottom: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
+
 .registration-button {
-  width: 30%;
-  position: relative;
-  left: 70%;
-  background-color: #3f72af;
+    width: 30%;
+    position: relative;
+    left: 70%;
+    background-color: #3f72af;
 }
+
 .registration-button:hover {
-  background-color: #f7be16;
-  color: black;
+    background-color: #f7be16;
+    color: black;
 }
+
 .login-inputs {
-  padding: 1% 1%;
+    padding: 1% 1%;
 }
+
 .reg-row {
-  padding-bottom: 1%;
-  padding-top: 1%;
+    padding-bottom: 1%;
+    padding-top: 1%;
 }
 
 /* Profile section */
-
-.profile-font{
-  font-family: "Oswald";
+.profile-font {
+    font-family: "Oswald";
 }
+
 .skill-row {
-  width: 75%;
-  margin: 7% auto 7% auto;
-  text-align: left;
-  line-height: 2;
+    width: 75%;
+    margin: 7% auto 7% auto;
+    text-align: left;
+    line-height: 2;
 }
 
 hr {
-  border-style: none;
-  border-top-style: dashed;
-  border-top-width: 7px;
-  height: 2px;
+    border-style: none;
+    border-top-style: dashed;
+    border-top-width: 7px;
+    height: 2px;
 }
 
-.code-img{
-  width: 100%;
-  border: 1px solid black;
-  border-radius: 5%;
+.code-img {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5%;
 }
 
 /* Review comments/complaints section */
-
-.com-compl-heading{
-  padding: 2% 7%;
+.com-compl-heading {
+    padding: 2% 7%;
 }
 
-.card-white{
-  color: #111;
-  background-color: #fff;
-  border-color: #ddd;
-  border: 1px solid #dddddd;
-  font-family: "Oswald";
-  margin-top: 2%;
-  margin-bottom: 2%;
+.card-white {
+    color: #111;
+    background-color: #fff;
+    border-color: #ddd;
+    border: 1px solid #dddddd;
+    font-family: "Oswald";
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
-.card-white:hover{
-  box-shadow: -10px 10px 35px #110133;
+.card-white:hover {
+    box-shadow: -10px 10px 35px #110133;
 }
 
 .avatar {
-  width: 60px;
-  height: 60px;
-  display: block;
-  margin-right: 15px;
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin-right: 15px;
 }
 
 .post-description p, h4 {
-  color: black;
+    color: black;
 }
 
 .post-description {
-  padding: 15px;
+    padding: 15px;
 }
 
-.retingo-iconos{
-  text-align: right;
-  padding: 1% 2%
+.retingo-iconos {
+    text-align: right;
+    padding: 1% 2%
 }
 
-.post{
-  padding: 1% 2%;
+.post {
+    padding: 1% 2%;
 }
 
 /* Addcomment section */
-
-.Comment-sec{
-  padding: 3% 2%;
+.Comment-sec {
+    padding: 3% 2%;
 }
 
-.vertinimo-iconos  {
-  padding-bottom: 10px;
+.vertinimo-iconos {
+    padding-bottom: 10px;
 }
 
-.vertinimo-laukas{
-  padding-right: 20%;
+.vertinimo-laukas {
+    padding-right: 20%;
 }
 
-.checked{
-  color: black;
+.checked {
+    color: black;
 }
+
 .pagination {
-  position: relative;
-  left: 86.7%;
+    position: relative;
+    left: 86.7%;
 }
+
 /* .filter-btn {
   position: relative;
   right: 33%;
@@ -417,101 +528,126 @@ hr {
     position: absolute;
     right: 0%;
 }
+
 .color-btn-filter1 {
-  position: absolute;
-  right: 21.5%;
-  background-color: #3f72af;
-  font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    right: 21.5%;
+    background-color: #3f72af;
+    font-family: 'Montserrat', sans-serif;
 }
+
 .color-btn-filter1:hover {
     background-color: #3f72af;
     font-family: 'Montserrat', sans-serif;
 }
-.a-filters {
-  font-family: 'Montserrat', sans-serif;
-}
-.h1-room-title {
-  margin: 2% 1% 1%;
-  font-size: 4rem;
-  font-weight: 700;
-  text-align: left;
-}
-.active-amber-textarea.md-form label.active {
-  color: #3f72af;
-}
-.amber-textarea textarea.md-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #3f72af;
-  box-shadow: 0 1px 0 0 #3f72af;
-}
-.amber-textarea.md-form .prefix.active {
-  color: #3f72af;
-}
-.active-amber-textarea.md-form textarea.md-textarea:focus:not([readonly])+label {
-  color: #3f72af;
-}
-.active-amber-textarea-2 textarea.md-textarea {
-  border-bottom: 1px solid #3f72af;
-  box-shadow: 0 1px 0 0 #3f72af;
 
+.a-filters {
+    font-family: 'Montserrat', sans-serif;
 }
+
+.h1-room-title {
+    margin: 2% 1% 1%;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.active-amber-textarea.md-form label.active {
+    color: #3f72af;
+}
+
+.amber-textarea textarea.md-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #3f72af;
+    box-shadow: 0 1px 0 0 #3f72af;
+}
+
+.amber-textarea.md-form .prefix.active {
+    color: #3f72af;
+}
+
+.active-amber-textarea.md-form textarea.md-textarea:focus:not([readonly])+label {
+    color: #3f72af;
+}
+
+.active-amber-textarea-2 textarea.md-textarea {
+    border-bottom: 1px solid #3f72af;
+    box-shadow: 0 1px 0 0 #3f72af;
+}
+
 .active-amber-textarea-2.md-form label.active {
-  color: #3f72af;
+    color: #3f72af;
 }
+
 .active-amber-textarea-2.md-form label {
-  color: #3f72af;
+    color: #3f72af;
 }
+
 .active-amber-textarea-2.md-form .prefix {
-  color: #3f72af;
+    color: #3f72af;
 }
+
 .active-amber-textarea-2.md-form textarea.md-textarea:focus:not([readonly])+label {
-  color: #3f72af;
+    color: #3f72af;
 }
+
 .spec-width {
-  width: 90%;
+    width: 90%;
 }
+
 .second-row {
-  margin-left: 0.1%;
-  margin-top: 2%;
+    margin-left: 0.1%;
+    margin-top: 2%;
 }
+
 .textfield-text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: black;
 }
+
 .rate-btn:hover {
-  background-color: #3f72af;
+    background-color: #3f72af;
 }
+
 .rate-btn {
-  border: solid 1.3px  #3f72af;
-  font-family:  'Montserrat', sans-serif;
-  font-size: 1.5rem;
+    border: solid 1.3px #3f72af;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
 }
+
 .star {
-  color: yellow;
+    color: yellow;
 }
+
 .fire {
-  color: red;
+    color: red;
 }
+
 .cart {
-  color: green;
+    color: green;
 }
+
 .cart:hover {
-  color: #dff6f0;
+    color: #dff6f0;
 }
+
 .card-style {
-  margin-top: 5%;
+    margin-top: 5%;
 }
+
 .usersManagement {
-  background-color: #dbe2ef;
-  padding-bottom: 5%;
+    background-color: #dbe2ef;
+    padding-bottom: 5%;
 }
+
 .card-header {
-  font-family:  'Montserrat', sans-serif;
-  font-size: 1.7rem;
-  font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
+
 .justify-content-center {
-  padding-top: 3%;
-  padding-bottom: 3%;
-  background-color: #e5dfdf;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #e5dfdf;
 }

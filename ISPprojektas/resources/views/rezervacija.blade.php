@@ -45,3 +45,6 @@ $id =  $_SESSION["roomID"]
     </tbody>
   </table>
 @endsection
+@section('lowFooter')
+  footer-main
+@endsection

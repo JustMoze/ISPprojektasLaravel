@@ -22,7 +22,7 @@
   <title>KTU hotel managers</title>
 </head>
 
-<body>
+<body class="@yield('bodyColor')">
   <section class="navbar-spalva">
     <nav class="navbar navbar-expand-md navbar-dark">
       <a class="navbar-brand logo_font" href=""><span class="logo_KTU">KTU</span>HotelManagers</a>
@@ -39,9 +39,6 @@
           <li class="nav-item">
             <a class="nav-link menu_items" href="/rooms">Kambariai</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link menu_items" href="#pricing">Pasiūlymai</a>
-          </li>
           @guest
           <li class="nav-item">
             <a class="nav-link" href="{{ route('login') }}">Prisijungti</a>
@@ -52,6 +49,9 @@
           </li>
           @endif
           @else
+          <li class="nav-item">
+            <a class="nav-link menu_items" href="{{route('my-rezervations')}}">Mano rezervacijos</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link menu_items {{ Request::route()->getName() === 'profile' ? 'active' : '' }}" href="{{ route('profile-window') }}">Profile</a>
           </li>
@@ -77,10 +77,8 @@
   </section>
   <!-- main section -->
   @yield('content')
-  @yield('UserName')
-  @yield('roomInfo')
   <!-- Footer -->
-  <footer id="footer" class="container-fluid">
+  <footer class="container-fluid @yield('lowFooter')">
     <i class="footer-icon-line fab fa-twitter fa-2x"></i>
     <i class="footer-icon-line fab fa-facebook fa-2x"></i>
     <i class="footer-icon-line fab fa-instagram fa-2x"></i>

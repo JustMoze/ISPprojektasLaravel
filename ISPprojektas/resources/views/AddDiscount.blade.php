@@ -4,3 +4,6 @@
 
   @include('sections.Discount-Form')
 @endsection
+@section('lowFooter')
+  footer-main
+@endsection

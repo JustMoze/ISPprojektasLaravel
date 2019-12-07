@@ -5,3 +5,6 @@
   @include('sections.ReviewComplaints')
 
 @endsection
+@section('lowFooter')
+  footer-main
+@endsection
