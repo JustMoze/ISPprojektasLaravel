@@ -24,17 +24,16 @@ $roomid =  $_SESSION["roomID"]
               <div>
                   <a href="#"><b>{{$user->name}}</b></a>
               </div>
-              <h6>1 minute ago</h6>
             </div>
-          </div>
-          <div class="post-description">
-            <h4>{{ $atsiliepimas->title }}</h4>
-            <p>{{ $atsiliepimas->message }}</p>
-          </div>
-          <div class="retingo-iconos">
-            <h6 class="ivert">
-              Ivertinimas: <strong style="color: #ed6663">5/{{ $atsiliepimas->rating }} <i class="fas fa-fire"></i></strong>
-          </h6>
+            <div class="post-description">
+              <h4>{{ $atsiliepimas->title }}</h4>
+              <p>{{ $atsiliepimas->message }}</p>
+            </div>
+            <div class="retingo-iconos">
+              <h6 class="ivert">
+                Ivertinimas: <strong style="color: #ed6663">5/{{ $atsiliepimas->rating }} <i class="fas fa-fire"></i></strong>
+            </h6>
+            </div>
           </div>
         </div>
       </div>
