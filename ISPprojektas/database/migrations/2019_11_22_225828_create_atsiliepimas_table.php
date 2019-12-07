@@ -20,7 +20,6 @@ class CreateAtsiliepimasTable extends Migration
             $table->bigInteger('rating');
             $table->string('title');
             $table->text('message');
-            $table->integer('room_id');
             $table->timestamps();
         });
 
