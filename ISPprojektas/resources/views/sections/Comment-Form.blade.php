@@ -3,9 +3,10 @@
   <h1>Įvertinkite kambarį!</h1>
   <div class="row">
     <div class="col-lg-6">
-      <form method="post" action="/Comments">
+      <form method="post" action="{{ route('store-comment') }}">
         @csrf
-
+        <input type="hidden" name="room-id" value="{{ $roomId }}">
+        <input type="hidden" name="user-id" value="{{Auth::user()->getId()}}">
         <div class="form-group">
           <label for="rating">Vertinimas nuo 1 iki 5</label>
           <div class="vertinimo-iconos">

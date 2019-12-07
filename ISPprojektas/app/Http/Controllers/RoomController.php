@@ -79,7 +79,7 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-        $room = Room::find($id);
+        $room = Room::with('Atsiliepimai')->find($id);
        //  dd($room);
         return view('room')->with('room', $room);
     }

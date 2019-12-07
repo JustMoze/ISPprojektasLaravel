@@ -108,3 +108,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:usersManagement')->group(function(){
   Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'edit']]);
 });
+
+Route::get('/comment/{roomId}', 'CommentController@createComment')->name('create-comment');
+Route::post('/comment', 'CommentController@store')->name('store-comment');
+
+Route::get('/complaint/{roomId}', 'ComplaintController@createComplaint')->name('create-complaint');
+Route::post('/complaint', 'ComplaintController@store')->name('store-complaint');
