@@ -4,3 +4,6 @@
 
   @include('sections.ReviewDiscounts')
 @endsection
+@section('lowFooter')
+  footer-main
+@endsection

@@ -4,3 +4,6 @@
 
   @include('sections.ReviewComments')
 @endsection
+@section('lowFooter')
+  footer-main
+@endsection
