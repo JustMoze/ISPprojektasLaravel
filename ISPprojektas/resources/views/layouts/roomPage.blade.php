@@ -18,37 +18,55 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 </head>
 
-<body id="press">
+<body>
   <section class="navbar-spalva">
-      <nav class="navbar navbar-expand-md navbar-dark nav-padding">
-        <a class="navbar-brand logo_font" href=""><span class="logo_KTU">KTU</span>HotelManagers</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="nav-padding collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link menu_items" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link menu_items" href="#press">Rooms</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link menu_items" href="#pricing">Special orders</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link menu_items" href="/Profile">Profile</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Login</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="/Login">Log in</a>
-                <a class="dropdown-item" href="/Registration">Sign up</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <nav class="navbar navbar-expand-md navbar-dark roomPageNavbar">
+      <a class="navbar-brand logo_font" href=""><span class="logo_KTU">KTU</span>HotelManagers</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="nav-padding collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left Side Of Navbar -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link menu_items " href="/">Pagrindinis puslapis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu_items" href="/rooms">Kambariai</a>
+          </li>
+          @guest
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">Prisijungti</a>
+          </li>
+          @if (Route::has('register'))
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('register') }}">Registruotis</a>
+          </li>
+          @endif
+          @else
+          <li class="nav-item">
+            <a class="nav-link menu_items {{ Request::route()->getName() === 'profile' ? 'active' : '' }}" href="{{ route('profile-window') }}">Profile</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Atsijungti
+              </a>
+          </li>
+              <!--  gates  -->
+              @can('usersManagement')
+              <li class="nav-item">
+              <a class="nav-link" href="{{route('admin.users.index')}}">Vartotojų langas</a>
+              </li>
+              @endcan
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+          @endguest
+        </ul>
+      </div>
+    </nav>
+    @yield('search-field')
   </section>
 
   @include('inc.messeges')
@@ -64,6 +82,7 @@
         @yield('reserve')
       </div>
     </div>
+    @can('User')
     <div class="row second-row">
       <div class="col-sm-1.5 col-md-1.5 col-lg-1.5">
         <button type="button" class="btn btn-outline rate-btn"><i class="fas fa-star star fa-1.5x"></i><a href="{{ route('create-comment', $room->id) }}">Įvertinti</a></button>
@@ -74,6 +93,7 @@
         <button type="button" class="btn btn-outline rate-btn btn-dark"><i ></i><a href="/Complaints">Nusiskundimai</a></button>
       </div>
     </div>
+    @endcan
   </div>
 
 

@@ -12,13 +12,14 @@
 @section('roomPrice')
   {{$room->kaina}}
 @endsection
+@can('User')
 @section('reserve')
-  <button type="button" class="btn btn-outline rate-btn" type="button" onclick="window.location='./{{$room->id}}/Payment'">
+  <a type="button" class="btn btn-outline rate-btn" type="button" href="{{route('rezervacijarezervacija.index')}}">
     <i class="fas fa-shopping-cart cart"></i>
-    Rezervuoti kambarį</button>
-  <a href="{{route('rezervacijarezervacija.index')}}"class="btn btn-outline rate-btn" type="button">Rezervacijų sarasas</a>
+    Rezervuoti kambarį</a>
 <?php
 session_start();
 $_SESSION["roomID"] = $room->id;
 ?>
 @endsection
+@endcan

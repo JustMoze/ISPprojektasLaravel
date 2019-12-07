@@ -17,6 +17,8 @@ class CreateRezervacijasTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->integer('room_id');
+            $table->integer('card_id')->unsigned()->nullable();
+            $table->foreign('card_id')->references('id')->on('payments');
             $table->Date('dateFrom');
             $table->Date('dateTo');
             $table->timestamps();
@@ -33,3 +35,4 @@ class CreateRezervacijasTable extends Migration
         Schema::dropIfExists('rezervacijas');
     }
 }
+		

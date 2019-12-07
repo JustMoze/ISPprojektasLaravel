@@ -57,7 +57,10 @@ class User extends Authenticatable
     {
       return $this->id;
     }
-
+    public function payments()
+    {
+      return $this->hasMany('App\Models\Payment');
+    }
     public function hasAnyRoles($roles)
     {
       if($this->roles()->whereIn('name', $roles)->first())
