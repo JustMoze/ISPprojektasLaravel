@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Atsiliepimas;
+use App\Models\Room;
+use App\User;
+use Auth;
 
 class CommentController extends Controller
 {
@@ -26,7 +29,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        return view('Addcomment');
+        //return view('Addcomment');
     }
 
     /**
@@ -43,11 +46,17 @@ class CommentController extends Controller
         ]
       );
 
+      $atsiliepimas =
+
       $atsiliepimai = new Atsiliepimas();
       $atsiliepimai->rating = $request->input('rating');
+      $atsiliepimai->title = $request->input('title');
+      $atsiliepimai->message = $request->input('message');
+      $atsiliepimai->room_id = $request->input('room-id');
+      $atsiliepimai->user_id = $request->input('user-id');
       $atsiliepimai->save();
 
-      return redirect('rooms')->with('success', 'Atiliepimas sukurtas sėkmingai');
+      return redirect('rooms/ '. $request->input('room-id'))->with('success', 'Atiliepimas sukurtas sėkmingai');
     }
 
     /**
@@ -60,7 +69,10 @@ class CommentController extends Controller
     {
         //
     }
-
+    public function createComment(int $id)
+    {
+      return view('Addcomment')->with('roomId', $id);
+    }
     /**
      * Show the form for editing the specified resource.
      *

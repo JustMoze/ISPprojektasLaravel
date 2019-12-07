@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Nusiskundimas;
+use App\Models\Room;
+use App\User;
+use Auth;
 
 class ComplaintController extends Controller
 {
@@ -26,7 +29,7 @@ class ComplaintController extends Controller
      */
     public function create()
     {
-        return view('Addcomplaint');
+        //return view('Addcomplaint');
     }
 
     /**
@@ -47,9 +50,11 @@ class ComplaintController extends Controller
       $nusiskundimai = new Nusiskundimas();
       $nusiskundimai->title = $request->input('title');
       $nusiskundimai->message = $request->input('message');
+      $nusiskundimai->room_id = $request->input('room-id');
+      $nusiskundimai->user_id = $request->input('user-id');
       $nusiskundimai->save();
 
-      return redirect('rooms')->with('success', 'Nusiskundimas sukurtas sėkmingai');
+      return redirect('rooms/ '. $request->input('room-id'))->with('success', 'Nusiskundimas sukurtas sėkmingai');
     }
 
     /**
@@ -61,6 +66,11 @@ class ComplaintController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function createComplaint(int $id)
+    {
+      return view('Addcomplaint')->with('roomId', $id);
     }
 
     /**

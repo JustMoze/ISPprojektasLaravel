@@ -97,3 +97,8 @@ Route::get('paymentai', array('as' => 'payment-update', 'uses' => 'Payments\Paym
     //
 }));
 Route::get('myRezervations', 'Rezervacija\RezervacijaController@myRezervations')->name('my-rezervations');
+Route::get('/comment/{roomId}', 'CommentController@createComment')->name('create-comment');
+Route::post('/comment', 'CommentController@store')->name('store-comment');
+
+Route::get('/complaint/{roomId}', 'ComplaintController@createComplaint')->name('create-complaint');
+Route::post('/complaint', 'ComplaintController@store')->name('store-complaint');
