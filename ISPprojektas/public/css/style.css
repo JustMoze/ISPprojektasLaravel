@@ -29,6 +29,11 @@ body {
     visibility: hidden;
 }
 
+#footer{
+  text-align: center;
+  background-color: #dbe2ef;
+}
+
 #Rezervuoti {
     padding-top: 1%;
 }
@@ -594,33 +599,43 @@ hr {
     width: 90%;
 }
 
-.second-row {
-    margin-left: 0.1%;
-    margin-top: 2%;
-}
-
 .textfield-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     color: black;
 }
 
-.rate-btn:hover {
-    background-color: #3f72af;
+.perziuros-btn{
+  padding: 2%;
 }
 
-.rate-btn {
-    border: solid 1.3px #3f72af;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+.rate-btn-text:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.rate-btn-text{
+  text-decoration: none;
+  color: black;
+}
+
+.rate-btn{
+  margin: 1% 0.1% 3%;
+  background-color: #f67280;
+  border-color: #f67280;
+}
+
+.rate-btn:hover{
+  background-color: #f8b195;
+  border-color: #f8b195;
 }
 
 .star {
-    color: yellow;
+    color: #ffd271;
 }
 
 .fire {
-    color: red;
+    color: #c72c41;
 }
 
 .cart {

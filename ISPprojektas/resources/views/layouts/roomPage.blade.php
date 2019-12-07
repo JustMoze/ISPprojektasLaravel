@@ -83,14 +83,17 @@
       </div>
     </div>
     @can('User')
-    <div class="row second-row">
-      <div class="col-sm-1.5 col-md-1.5 col-lg-1.5">
-        <button type="button" class="btn btn-outline rate-btn"><i class="fas fa-star star fa-1.5x"></i><a href="{{ route('create-comment', $room->id) }}">Įvertinti</a></button>
-        <button type="button" class="btn btn-outline rate-btn btn-dark"><i ></i><a href="/Comments">Atsiliepimai</a></button>
+    <div class="row">
+      <div class="col-sm-1.5 col-md-1.5 col-lg-12">
+        <button type="button" class="btn btn-primary rate-btn"><i class="fas fa-star star"><a class="rate-btn-text" href="{{ route('create-comment', $room->id) }}"> Rate</a></i></button>
+        <button type="button" class="btn btn-primary rate-btn"><i class="fas fa-angry fire"><a class="rate-btn-text" href="{{ route('create-complaint', $room->id) }}"> Complaint</a></i> </button>
+
       </div>
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <button type="button" class="btn btn-outline rate-btn"><i class="fas fa-fire fire fa-1.5x"></i><a href="{{ route('create-complaint', $room->id) }}">Rašyti nusiskundimą</a> </button>
-        <button type="button" class="btn btn-outline rate-btn btn-dark"><i ></i><a href="/Complaints">Nusiskundimai</a></button>
+      <div class="col-sm-2 col-md-2 col-lg-12">
+        <i class="fas fa-arrow-circle-right perziuros-btn"><a href="/Comments"> Peržiūrėti visus kambario atsiliepimus</a></i>
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-12">
+        <i class="fas fa-arrow-circle-right perziuros-btn"><a href="/Complaints">Peržiūrėti visus kambario nusiskundimus</a></i>
       </div>
     </div>
     @endcan
