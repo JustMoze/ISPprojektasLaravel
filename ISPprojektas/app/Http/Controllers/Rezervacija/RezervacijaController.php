@@ -10,6 +10,7 @@ use App\Http\Requests\RezervationRequest;
 use App\User;
 use Carbon\Carbon;
 use Auth;
+use Mail;
 
 class RezervacijaController extends Controller
 {
@@ -73,7 +74,6 @@ class RezervacijaController extends Controller
     }
     public function rezervationChecker(Request $request)
     {
-    //
       $rezervacija = new Rezervacija();
       $user_id = $request->get('user_id');
       $user = User::find($user_id);
@@ -113,6 +113,17 @@ class RezervacijaController extends Controller
             $rezervacija->room_id = $room_id;
             $rezervacija->card_id = $card->id;
             $rezervacija->save();
+            $data = array(
+
+              'email' => $user->email,
+              'subject' => "Rezervacija",
+              'bodyMessage' => "Sekmingai uzsirezervavote"
+            );
+            Mail::send('email.contact', $data, function($message) use ($data){
+              $message->from('KTUmenegers@gmail.com');
+              $message->to($data['email']);
+              $message->subject($data['subject']);
+            });
             $card->amount = $moneyAmount - $totalPrice;
             $user->payments()->save($card);
             return redirect('home')->with('success', 'Rezervacija įvykdyta sėkmingai');
