@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Rezervacija;
+use App\Models\Atsiliepimas;
+use App\Models\Nusiskundimas;
 
 class User extends Authenticatable
 {
@@ -67,5 +69,15 @@ class User extends Authenticatable
     public function Rezervacijos()
     {
     	return $this->hasMany(Rezervacija::class);
+    }
+
+    public function Atsiliepimai()
+    {
+    	return $this->hasMany(Atsiliepimas::class);
+    }
+
+    public function Nusiskundimai()
+    {
+    	return $this->hasMany(Nusiskundimas::class);
     }
 }

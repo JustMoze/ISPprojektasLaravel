@@ -15,6 +15,8 @@ class CreateAtsiliepimasTable extends Migration
     {
         Schema::create('atsiliepimas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('room_id');
+            $table->integer('user_id');
             $table->bigInteger('rating');
             $table->string('title');
             $table->text('message');
