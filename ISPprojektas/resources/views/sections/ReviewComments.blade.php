@@ -31,10 +31,24 @@ $roomid =  $_SESSION["roomID"]
             </div>
             <div class="retingo-iconos">
               <h6 class="ivert">
-                Ivertinimas: <strong style="color: #ed6663">5/{{ $atsiliepimas->rating }} <i class="fas fa-fire"></i></strong>
+                Ivertinimas: <strong style="color: #ed6663">{{ $atsiliepimas->rating }}/5 <i class="fas fa-fire"></i></strong>
             </h6>
             </div>
           </div>
+          @if($user_id === $id )
+          <form action = "{{route('Comments.destroy', $atsiliepimas->id)}}" method = "post">
+            @csrf
+            {{method_field('DELETE')}}
+          <button type="submit" class="btn btn-danger" name="button"> Ištrinti</button>
+        </form>
+          @endif
+          @can('usersManagement')
+          <form action = "{{route('Comments.destroy', $atsiliepimas->id)}}" method = "post">
+            @csrf
+            {{method_field('DELETE')}}
+          <button type="submit" class="btn btn-danger" name="button"> Ištrinti</button>
+        </form>
+        @endcan
         </div>
       </div>
       <script src="{{asset('js\app.js')}}" charset="utf-8"></script>

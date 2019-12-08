@@ -4,7 +4,7 @@
     <div class="col-lg-3">
       <h6>Profile picture</h4>
       <img class="code-img" src="images/avatar.png" alt="">
-      <a href="{{route('ProfileEdit', Auth::user()->getId())}}" class=" btn btn-primary btn-sm" type="button" name="button"><i class="fas fa-edit"> Edit</i></a>
+      <a href="{{route('ProfileEdit', Auth::user()->getId())}}"  type="button" class="btn btn-warning btn-sm" name="button"><i class="fas fa-edit"> Redaguoti</i></a>
     </div>
     <div class="col-lg-9">
       <h3>Vardas</h3>

@@ -18,8 +18,9 @@ class ComplaintController extends Controller
     public function index()
     {
       $nusiskundimai = Nusiskundimas::all();
+      $user_id = Auth::user()->getId();
 
-      return view('Complaints')->with('Nusiskundimai', $nusiskundimai);
+      return view('Complaints')->with(['Nusiskundimai' => $nusiskundimai, 'user_id' => $user_id] );
     }
 
     /**
@@ -104,6 +105,9 @@ class ComplaintController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $nusiskundimas = Nusiskundimas::find($id);
+      $room = $nusiskundimas->Room;
+      $nusiskundimas->delete();
+      return view('room')->with('room', $room);
     }
 }
