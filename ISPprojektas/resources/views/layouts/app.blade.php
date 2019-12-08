@@ -55,21 +55,24 @@
           <li class="nav-item">
             <a class="nav-link menu_items {{ Request::route()->getName() === 'profile' ? 'active' : '' }}" href="{{ route('profile-window') }}">Profile</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Atsijungti
-              </a>
-          </li>
               <!--  gates  -->
               @can('usersManagement')
               <li class="nav-item">
               <a class="nav-link" href="{{route('admin.users.index')}}">Vartotojų langas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Discounts">Nuolaidos</a>
               </li>
               @endcan
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
               </form>
           @endguest
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Atsijungti
+              </a>
+          </li>
         </ul>
       </div>
     </nav>
