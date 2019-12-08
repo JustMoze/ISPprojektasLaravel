@@ -18,8 +18,9 @@ class CommentController extends Controller
     public function index()
     {
         $atsiliepimai = Atsiliepimas::all();
+        $user_id = Auth::user()->getId();
 
-        return view('Comments')->with('Atsiliepimai', $atsiliepimai);
+        return view('Comments')->with(['Atsiliepimai' => $atsiliepimai, 'user_id' => $user_id]);
     }
 
     /**
@@ -104,6 +105,9 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $atsiliepimas = Atsiliepimas::find($id);
+      $room = $atsiliepimas->Room;
+      $atsiliepimas->delete();
+      return view('room')->with('room', $room);
     }
 }

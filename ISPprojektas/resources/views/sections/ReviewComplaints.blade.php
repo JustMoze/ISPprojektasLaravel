@@ -32,6 +32,20 @@ $roomid =  $_SESSION["roomID"]
             <h4>{{ $nusiskundimas->title }}</h4>
             <p>{{ $nusiskundimas->message }}</p>
           </div>
+          @if($user_id === $id )
+          <form action = "{{route('Complaints.destroy', $nusiskundimas->id)}}" method = "post">
+            @csrf
+            {{method_field('DELETE')}}
+          <button type="submit" class="btn btn-danger" name="button"> Ištrinti</button>
+        </form>
+          @endif
+          @can('usersManagement')
+          <form action = "{{route('Complaints.destroy', $nusiskundimas->id)}}" method = "post">
+            @csrf
+            {{method_field('DELETE')}}
+          <button type="submit" class="btn btn-danger" name="button"> Ištrinti</button>
+        </form>
+        @endcan
         </div>
       </div>
       @endif

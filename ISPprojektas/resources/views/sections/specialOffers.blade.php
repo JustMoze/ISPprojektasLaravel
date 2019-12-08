@@ -17,7 +17,6 @@
         <p> + Vakarienė </p>
         <p> + Baseinas ir kitos linksmybės  </p>
         <p> + Neribotas gėrimų baras </p>
-        <button class="spec_ord_buttons btn btn-lg btn-block btn-dark" type="button">Užsisakyk!</button>
       </div>
     </div>
   </div>
@@ -31,7 +30,6 @@
         <p> + Šilta vonia</p>
         <p> + Neribotas gėrimų baras </p>
         <p> + Baseinas ir kitos linksmybės</p>
-        <button class="spec_ord_buttons btn btn-lg btn-block btn-dark" type="button">Užsisakyk!</button>
       </div>
     </div>
   </div>
@@ -45,7 +43,6 @@
         <p> + Šilta vonia</p>
         <p> + Masažas </p>
         <p> + Baseinas </p>
-        <button class="spec_ord_buttons btn btn-lg btn-block btn-dark" type="button">Užsisakyk!</button>
       </div>
     </div>
   </div>
