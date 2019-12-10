@@ -42,7 +42,7 @@ Route::post('update/{id_Nuolaida}', 'DiscountController@update');
 Route::get('/Discounts', 'DiscountController@getNuolaidas')->name('Discounts');
 
 Route::delete('/Profile/{user}', 'Admin\UsersController@deleteMyself')->name('deleteMySelf');
-
+Route::get('/Profile/{id}', 'Admin\UsersController@ShowProfile')->name('ShowProfile');
 //Prideti Nuolaida
 Route::get('/AddDiscount', function () {
   return view('AddDiscount');
