@@ -92,9 +92,11 @@
       <div class="col-sm-2 col-md-2 col-lg-12">
         <i class="fas fa-arrow-circle-right perziuros-btn"><a href="/Comments"> Peržiūrėti visus kambario atsiliepimus</a></i>
       </div>
+      @can('usersManagement')
       <div class="col-sm-2 col-md-2 col-lg-12">
         <i class="fas fa-arrow-circle-right perziuros-btn"><a href="/Complaints">Peržiūrėti visus kambario nusiskundimus</a></i>
       </div>
+      @endcan
     </div>
     @endcan
   </div>
