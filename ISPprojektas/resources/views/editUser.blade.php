@@ -1,5 +1,5 @@
 @extends('layouts.app')
-  @csrf
+@csrf
 @section('content')
 <!-- <label for="surname">Įveskite pavardę:⠀</label>
 <input type="string" placeholder="Pavardė" name="surname">
@@ -147,7 +147,12 @@
                 </label>
               </div>
             </div>
-
+            <div class="form-group row">
+            <label for="photo" class="col-md-4 col-form-label text-md-right">Nuotrauka</label>
+              <div class="col-md-6">
+              <input type="text" name="photo" class="form-control" placeholder="Įveskite URL pridėti nuotraukai ">
+            </div>
+          </div>
             <div class="form-group row mb-0">
               <div class="col-md-6 offset-md-4">
                 <button type="submit" class="btn btn-success">
@@ -159,7 +164,9 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
 @endsection
 @section('lowFooter')
-  footer-main
+footer-main
 @endsection
