@@ -68,11 +68,13 @@
                 @csrf
               </form>
           @endguest
+          @can('usersManagement')
           <li class="nav-item">
               <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Atsijungti
               </a>
           </li>
+          @endcan
         </ul>
       </div>
     </nav>
