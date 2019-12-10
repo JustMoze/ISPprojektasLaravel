@@ -66,7 +66,7 @@
                     <label data-toggle="tooltip" name="cvv" title="Three-digits code on the back of your card">CVV kodas
                       <i class="fa fa-question-circle"></i>
                     </label>
-                    <input type="text" required class="form-control">
+                    <input type="number" name="cvv" required class="form-control">
                   </div>
                 </div>
               </div>
