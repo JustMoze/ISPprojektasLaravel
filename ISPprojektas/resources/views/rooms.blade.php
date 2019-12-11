@@ -4,7 +4,7 @@
   <div class="col-lg-4 col-md-4 col-sm-6">
   </div>
   <div class="col-lg-4 col-md-4 col-sm-12 search_col">
-    <form method="get" action="/search" class="form-inline md-form form-sm" >
+    <form method="get" action="/search" class="form-inline md-form form-sm">
       <input class="form-control form-control-sm mr-3 w-75" name="searchLine" type="search" placeholder="Search" aria-label="Search">
       <button type="submit" name="button" class="search_button"><i class="fas fa-search" aria-hidden="true"></i> Search</button>
     </form>
@@ -41,35 +41,49 @@
     </div>
   </div>
   <h1 class="h1-room-title">Kambariai</h1>
-    <div class="row">
-        @foreach($rooms as $room)
-          <div class="pricing-cards col-lg-4">
-            <div class="card-img card">
-              <img src="{{$room->kambario_nuotrauka}}" alt="room-image">
-              <div class="color-room card-body">
-                <h3>Kambario numeris: {{$room->id}}</h3>
-                <h4>Kaina: {{$room->kaina}}€</h4>
-                <p>{{$room->apibudinimas}}</p>
-                <button type="button" onclick="window.location='rooms/{{$room->id}}'" class="rooms_btn btn btn-lg btn-block btn-dark">
-                  <a>
-                    Peržiūrėti
-                  </a>
-                </button>
-              </div>
-            </div>
-          </div>
-        @endforeach
-        <?php
-        $max = sizeof($rooms);
-         if($max <= 0){
-           echo "<h1>Nerastas nei vienas kambarys.</h1>";
-         } ?>
-        <div class="pagination">
-          {{ $rooms->links() }}
+  @can('usersManagement')
+  <button type="button" onclick="window.location='AddRoom/'" class="rooms_btn btn btn-lg btn-block btn-dark">
+    <a>
+      Pridėti kambarį
+    </a>
+  </button>
+  @endcan
+  <div class="row">
+    @foreach($rooms as $room)
+    <div class="pricing-cards col-lg-4">
+      <div class="card-img card">
+        <img src="{{$room->kambario_nuotrauka}}" alt="room-image">
+        <div class="color-room card-body">
+          <h3>Kambario numeris: {{$room->id}}</h3>
+          <h4>Kaina: {{$room->kaina}}€</h4>
+          <p>{{$room->apibudinimas}}</p>
+          <button type="button" onclick="window.location='rooms/{{$room->id}}'" class="rooms_btn btn btn-lg btn-block btn-dark">
+            <a>
+              Peržiūrėti
+            </a>
+          </button>
+          @can('usersManagement')
+          <button type="button" onclick="window.location='rooms/{{$room->id}}/edit'" class="rooms_btn btn btn-lg btn-block btn-dark">
+            <a>
+              Redaguoti
+            </a>
+          </button>
+          @endcan
         </div>
+      </div>
     </div>
+    @endforeach
+    <?php
+    $max = sizeof($rooms);
+    if ($max <= 0) {
+      echo "<h1>Nerastas nei vienas kambarys.</h1>";
+    } ?>
+    <div class="pagination">
+      {{ $rooms->links() }}
+    </div>
+  </div>
 </section>
 @endsection
 @section('lowFooter')
-  footer-main
+footer-main
 @endsection
