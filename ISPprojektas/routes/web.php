@@ -108,3 +108,5 @@ Route::post('/comment', 'CommentController@store')->name('store-comment');
 
 Route::get('/complaint/{roomId}', 'ComplaintController@createComplaint')->name('create-complaint');
 Route::post('/complaint', 'ComplaintController@store')->name('store-complaint');
+
+Route::get('/information', 'HotelController@index')->name('info');
