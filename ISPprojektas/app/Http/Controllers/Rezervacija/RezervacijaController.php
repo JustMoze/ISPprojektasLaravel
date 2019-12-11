@@ -47,7 +47,17 @@ class RezervacijaController extends Controller
     {
         //
     }
-
+    public function sertificate($id)
+    {
+      $rezervacija = Rezervacija::find($id);
+      $room = Room::find($rezervacija->room_id);
+      $firstDay = Carbon::parse($rezervacija->dateFrom);
+      $lastDay = Carbon::parse($rezervacija->dateTo);
+      $days =  $firstDay->diffInDays($lastDay, false);
+      $totalPrice = $days * $room->kaina;
+      $user = User::find($rezervacija->user_id);
+      return view('sertificate')->with(['room' => $room, 'rezervacija' => $rezervacija, 'totalPrice' => $totalPrice, 'user' => $user]);
+    }
     /**
      * Store a newly created resource in storage.
      *
