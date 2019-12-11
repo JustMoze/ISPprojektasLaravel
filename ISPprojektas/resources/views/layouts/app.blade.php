@@ -6,22 +6,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!-- style.css -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Ubuntu&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu&display=swap" rel="stylesheet">
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/b6e025948a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('css/paymentStyle.css')}}">
   <link rel="icon" href="favicon.ico">
   <title>KTU hotel managers</title>
 </head>
-
 <body class="@yield('bodyColor')">
   <section class="navbar-spalva">
     <nav class="navbar navbar-expand-md navbar-dark">
@@ -48,13 +46,15 @@
             <a class="nav-link" href="{{ route('register') }}">Registruotis</a>
           </li>
           @endif
-          @else
+          @endguest
+          @auth
           <li class="nav-item">
             <a class="nav-link menu_items" href="{{route('my-rezervations')}}">Mano rezervacijos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link menu_items {{ Request::route()->getName() === 'profile' ? 'active' : '' }}" href="{{ route('profile-window') }}">Profile</a>
           </li>
+          @endauth
               <!--  gates  -->
               @can('usersManagement')
               <li class="nav-item">
@@ -67,17 +67,19 @@
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
               </form>
-          @endguest
+          @auth
           <li class="nav-item">
               <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Atsijungti
               </a>
           </li>
+          @endauth
         </ul>
       </div>
     </nav>
     @yield('search-field')
   </section>
+  @include('inc.messeges')
   <!-- main section -->
   @yield('content')
   <!-- Footer -->

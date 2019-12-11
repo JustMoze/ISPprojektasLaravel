@@ -62,6 +62,7 @@ class RezervacijaController extends Controller
     }
     public function storeDate(Request $request)
     {
+
       $rezervacija = new Rezervacija();
       $rez_id = $rezervacija->id;
       $dateFrom = $request->input('DateFrom');
@@ -74,6 +75,15 @@ class RezervacijaController extends Controller
     }
     public function rezervationChecker(Request $request)
     {
+      $this->validate($request,
+        [
+          'expirationDate' => 'required',
+          'cardName' => 'required|string',
+          'cardNumber' => 'required',
+          'cvv' => 'required|integer|max:999'
+        ]
+      );
+
       $rezervacija = new Rezervacija();
       $user_id = $request->get('user_id');
       $user = User::find($user_id);
@@ -97,13 +107,13 @@ class RezervacijaController extends Controller
       foreach($paymentCards as $card)
       {
         $moneyAmount = $card->amount;
-        if ($moneyAmount >= $totalPrice && $card->cardCode == $cardNumber && $card->cardName == $cardName) {
+        if ($moneyAmount >= $totalPrice && $card->cardCode == $cardNumber && $card->cardName == $cardName && $card->date == $expirationDate && $card->cvv == $cvv ) {
         // code...
           $free = true;
           foreach ($rezervacijos as $kambario_rezervacija) {
               if ($kambario_rezervacija->dateFrom >= $dateFrom && $kambario_rezervacija->dateFrom <= $dateTo || $kambario_rezervacija->dateFrom <= $dateFrom && $kambario_rezervacija->dateTo >= $dateTo || $kambario_rezervacija->dateTo >= $dateFrom &&
               $kambario_rezervacija->dateTo <= $dateTo || $dateFrom>= $dateTo) {
-              $free = false;
+                $free = false;
               }
           }
           if($free){
@@ -130,11 +140,11 @@ class RezervacijaController extends Controller
             break;
           }
           else{
-            return redirect()->route('rezervacijarezervacija.index')->with('error_message', 'Pasirinktas laikas yra klaidingas');
+            return redirect()->route('rezervacijarezervacija.index')->with('danger', 'Pasirinktas laikas yra klaidingas');
           }
         }
       }
-      return redirect('withUser')->with('error_message', 'Klaidingi Kreditinės kortelės duomenys arba nepakanka pinigų jūsų sąskaitoje');
+      return redirect()->route('withUser')->with('danger', 'Klaidingi Kreditinės kortelės duomenys arba nepakanka pinigų jūsų sąskaitoje');
 
     }
     /**
