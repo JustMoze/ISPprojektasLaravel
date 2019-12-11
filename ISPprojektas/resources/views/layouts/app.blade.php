@@ -48,9 +48,11 @@
           @endif
           @endguest
           @auth
+          @can('justUser')
           <li class="nav-item">
             <a class="nav-link menu_items" href="{{route('my-rezervations')}}">Mano rezervacijos</a>
           </li>
+          @endcan
           <li class="nav-item">
             <a class="nav-link menu_items {{ Request::route()->getName() === 'profile' ? 'active' : '' }}" href="{{ route('profile-window') }}">Profile</a>
           </li>
@@ -82,6 +84,7 @@
   @include('inc.messeges')
   <!-- main section -->
   @yield('content')
+  @yield('info')
   <!-- Footer -->
   <footer id="footer" class="container-fluid @yield('lowFooter')">
     <i class="footer-icon-line fab fa-twitter fa-2x"></i>
