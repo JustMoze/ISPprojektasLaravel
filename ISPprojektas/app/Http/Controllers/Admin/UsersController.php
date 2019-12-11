@@ -75,7 +75,7 @@ class UsersController extends Controller
           $a9 = 3;
         }
         $user->gender = $a9;
-
+        $user->photo = $request->input('photo');
         $user->save();
 
        return redirect()->route('profile-window');
@@ -101,5 +101,10 @@ class UsersController extends Controller
       $user->delete();
       Auth::logout();
       return redirect()->view('home');
+    }
+    public function ShowProfile($id)
+    {
+      $user= User::where('id',$id)->first();
+      return view('/Profile')->with(['user'=>$user]);
     }
 }

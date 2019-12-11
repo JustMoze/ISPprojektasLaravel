@@ -83,7 +83,7 @@
   <!-- main section -->
   @yield('content')
   <!-- Footer -->
-  <footer class="container-fluid @yield('lowFooter')">
+  <footer id="footer" class="container-fluid @yield('lowFooter')">
     <i class="footer-icon-line fab fa-twitter fa-2x"></i>
     <i class="footer-icon-line fab fa-facebook fa-2x"></i>
     <i class="footer-icon-line fab fa-instagram fa-2x"></i>

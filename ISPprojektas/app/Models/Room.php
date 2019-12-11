@@ -27,4 +27,5 @@ class Room extends Model
   {
     return $this->id;
   }
+
 }

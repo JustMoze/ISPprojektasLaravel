@@ -85,16 +85,18 @@
     @can('User')
     <div class="row">
       <div class="col-sm-1.5 col-md-1.5 col-lg-12">
-        <button type="button" class="btn btn-primary rate-btn"><i class="fas fa-star star"><a class="rate-btn-text" href="{{ route('create-comment', $room->id) }}"> Rate</a></i></button>
-        <button type="button" class="btn btn-primary rate-btn"><i class="fas fa-angry fire"><a class="rate-btn-text" href="{{ route('create-complaint', $room->id) }}"> Complaint</a></i> </button>
+        <a class="rate-btn-text" href="{{ route('create-comment', $room->id) }}"> <button type="button" class="btn btn-primary rate-btn"><i class="fas fa-star star"> Rate</i></button></a>
+        <a class="rate-btn-text" href="{{ route('create-complaint', $room->id) }}"><button type="button" class="btn btn-primary rate-btn"><i class="fas fa-angry fire"> Complaint</i> </button></a>
 
       </div>
       <div class="col-sm-2 col-md-2 col-lg-12">
         <i class="fas fa-arrow-circle-right perziuros-btn"><a href="/Comments"> Peržiūrėti visus kambario atsiliepimus</a></i>
       </div>
+      @can('usersManagement')
       <div class="col-sm-2 col-md-2 col-lg-12">
         <i class="fas fa-arrow-circle-right perziuros-btn"><a href="/Complaints">Peržiūrėti visus kambario nusiskundimus</a></i>
       </div>
+      @endcan
     </div>
     @endcan
   </div>

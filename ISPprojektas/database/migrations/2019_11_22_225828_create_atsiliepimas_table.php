@@ -18,8 +18,8 @@ class CreateAtsiliepimasTable extends Migration
             $table->integer('room_id');
             $table->integer('user_id');
             $table->bigInteger('rating');
-            $table->string('title');
-            $table->text('message');
+            $table->string('title')->nullable();
+            $table->text('message')->nullable();
             $table->timestamps();
         });
 
