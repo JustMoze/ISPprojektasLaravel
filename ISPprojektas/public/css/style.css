@@ -309,7 +309,15 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
 }
-
+.specRow {
+  margin: 4% auto;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: #b6e6bd;
+}
+.whiteContainer {
+  background-color: white;
+}
 /* spec offers  */
 .Spec_offers {
     background-color: #393e46;

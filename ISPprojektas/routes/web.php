@@ -110,3 +110,4 @@ Route::get('/complaint/{roomId}', 'ComplaintController@createComplaint')->name('
 Route::post('/complaint', 'ComplaintController@store')->name('store-complaint');
 
 Route::get('/information', 'HotelController@index')->name('info');
+Route::get('/myRezervations/sertificate/{rezervation}', 'Rezervacija\RezervacijaController@sertificate')->name('sertificate');
