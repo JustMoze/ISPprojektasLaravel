@@ -53,6 +53,19 @@ class PaymentController extends Controller
     {
         //
     }
+    public function update(Request $request, $id)
+    {
+      $this->validate($request,
+        [
+          'cardCode' => 'required|string|max:19|min:18'
+        ]
+      );
+      $payment = Payment::find($id);
+      $cardCode1 = $request->input('cardCode');
+      $payment->cardCode = $cardCode1;
+      $payment->save();
+      return redirect('/Profile')->with('success', 'Saskaita sėkmingaia buvo įvesta/pakeista');
+    }
 
     /**
      * Store a newly created resource in storage.
