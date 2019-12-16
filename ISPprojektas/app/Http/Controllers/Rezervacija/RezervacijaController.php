@@ -150,12 +150,11 @@ class RezervacijaController extends Controller
             break;
           }
           else{
-            return redirect()->route('rezervacijarezervacija.index')->with('danger', 'Pasirinktas laikas yra klaidingas');
+            return redirect('/rezervacija')->with('danger', 'Pasirinktas laikas yra klaidingas arba parinkti klaidingi kreditinės kortelės duomenys|nepakanka pinigų jūsų sąskaitoje');
           }
         }
       }
-      return redirect()->route('withUser')->with('danger', 'Klaidingi Kreditinės kortelės duomenys arba nepakanka pinigų jūsų sąskaitoje');
-
+      return redirect('/home')->with('danger', 'Klaidingi Kreditinės kortelės duomenys arba nepakanka pinigų jūsų sąskaitoje');
     }
     /**
      * Display the specified resource.
