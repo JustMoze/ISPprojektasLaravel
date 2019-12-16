@@ -47,7 +47,17 @@ class RezervacijaController extends Controller
     {
         //
     }
-
+    public function sertificate($id)
+    {
+      $rezervacija = Rezervacija::find($id);
+      $room = Room::find($rezervacija->room_id);
+      $firstDay = Carbon::parse($rezervacija->dateFrom);
+      $lastDay = Carbon::parse($rezervacija->dateTo);
+      $days =  $firstDay->diffInDays($lastDay, false);
+      $totalPrice = $days * $room->kaina;
+      $user = User::find($rezervacija->user_id);
+      return view('sertificate')->with(['room' => $room, 'rezervacija' => $rezervacija, 'totalPrice' => $totalPrice, 'user' => $user]);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -62,6 +72,7 @@ class RezervacijaController extends Controller
     }
     public function storeDate(Request $request)
     {
+
       $rezervacija = new Rezervacija();
       $rez_id = $rezervacija->id;
       $dateFrom = $request->input('DateFrom');
@@ -74,6 +85,15 @@ class RezervacijaController extends Controller
     }
     public function rezervationChecker(Request $request)
     {
+      $this->validate($request,
+        [
+          'expirationDate' => 'required',
+          'cardName' => 'required|string',
+          'cardNumber' => 'required',
+          'cvv' => 'required|integer|max:999'
+        ]
+      );
+
       $rezervacija = new Rezervacija();
       $user_id = $request->get('user_id');
       $user = User::find($user_id);
@@ -97,13 +117,13 @@ class RezervacijaController extends Controller
       foreach($paymentCards as $card)
       {
         $moneyAmount = $card->amount;
-        if ($moneyAmount >= $totalPrice && $card->cardCode == $cardNumber && $card->cardName == $cardName) {
+        if ($moneyAmount >= $totalPrice && $card->cardCode == $cardNumber && $card->cardName == $cardName && $card->date == $expirationDate && $card->cvv == $cvv ) {
         // code...
           $free = true;
           foreach ($rezervacijos as $kambario_rezervacija) {
               if ($kambario_rezervacija->dateFrom >= $dateFrom && $kambario_rezervacija->dateFrom <= $dateTo || $kambario_rezervacija->dateFrom <= $dateFrom && $kambario_rezervacija->dateTo >= $dateTo || $kambario_rezervacija->dateTo >= $dateFrom &&
               $kambario_rezervacija->dateTo <= $dateTo || $dateFrom>= $dateTo) {
-              $free = false;
+                $free = false;
               }
           }
           if($free){
@@ -130,11 +150,11 @@ class RezervacijaController extends Controller
             break;
           }
           else{
-            return redirect()->route('rezervacijarezervacija.index')->with('error_message', 'Pasirinktas laikas yra klaidingas');
+            return redirect()->route('rezervacijarezervacija.index')->with('danger', 'Pasirinktas laikas yra klaidingas');
           }
         }
       }
-      return redirect('withUser')->with('error_message', 'Klaidingi Kreditinės kortelės duomenys arba nepakanka pinigų jūsų sąskaitoje');
+      return redirect()->route('withUser')->with('danger', 'Klaidingi Kreditinės kortelės duomenys arba nepakanka pinigų jūsų sąskaitoje');
 
     }
     /**
@@ -180,5 +200,19 @@ class RezervacijaController extends Controller
     public function destroy($id)
     {
         //
+        $rezervation = Rezervacija::find($id);
+        $user_id = Auth::user()->getId();
+        $user = User::find($user_id);
+        $room = Room::find($rezervation->room_id);
+        $myPayment = $user->payments;
+        $onePayment = $myPayment[0];
+        $firstDay = Carbon::parse($rezervation->dateFrom);
+        $lastDay = Carbon::parse($rezervation->dateTo);
+        $days =  $firstDay->diffInDays($lastDay, false);
+        $totalPrice = ($days * $room->kaina) + $onePayment->amount;
+        $onePayment->amount = $totalPrice;
+        $onePayment->save();
+        $rezervation->delete();
+        return redirect('/myRezervations')->with('success', 'Rezervacija sėkmingai buvo atšaukta ir pinigai grąžinti į sąskaitą');
     }
 }

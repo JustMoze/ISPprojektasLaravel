@@ -31,6 +31,16 @@
 @include('sections.specialOffers')
 
 @endsection
+@section('info')
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-5 col-md-5 col-lg-5"></div>
+    <div class="col-sm-2 col-md-2 col-lg-2 information">
+      <a type="button" class="btn info-button" href="{{route('info')}}"><i class="fas fa-info fa-2x"> Informacija</i></a>
+    </div>
+  </div>
+</div>
+@endsection
 @section('lowFooter')
   footer-main
 @endsection

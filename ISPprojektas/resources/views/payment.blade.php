@@ -3,6 +3,13 @@
   body-Payment
 @endsection
 @section('content')
+@php
+  use App\Models\Rezervacija;
+  use App\User;
+
+  $creditCards = $user->payments;
+  $creditCard = $creditCards[0];
+@endphp
 <div class="container py-5">
   <!-- For demo purpose -->
   <!-- End -->
@@ -28,7 +35,7 @@
 
           <!-- credit card info-->
           <div id="nav-tab-card" class="tab-pane fade show active">
-            <form method="post" action="{{route('payment-update')}}">
+            <form method="post" class="paymentForm" action="{{route('payment-update')}}">
               @csrf
               {{ method_field('GET') }}
               <input type="hidden" name="userID" value="{{$user_id}}">
@@ -37,12 +44,12 @@
               <input type="hidden" name="dateFrom" value="{{$dateFrom}}">
               <div class="form-group">
                 <label for="username">Kreditinės kortelės vardas</label>
-                <input type="text" name="username" placeholder="@yield('placeholder1')" required class="form-control">
+                <input type="text" name="username" placeholder="Kortelės vardas" required class="form-control">
               </div>
               <div class="form-group">
                 <label for="cardNumber">Kreditinės kortelės numeris</label>
                 <div class="input-group">
-                  <input type="text" name="cardNumber" placeholder="Your card number" class="form-control" required>
+                  <input type="text" name="cardNumber" value="{{$creditCard->cardCode}}" placeholder="Your card number" class="form-control" required>
                   <div class="input-group-append">
                     <span class="input-group-text text-muted">
                       <i class="fa fa-cc-visa mx-1"></i>
@@ -66,12 +73,17 @@
                     <label data-toggle="tooltip" name="cvv" title="Three-digits code on the back of your card">CVV kodas
                       <i class="fa fa-question-circle"></i>
                     </label>
-                    <input type="text" required class="form-control">
+                    <input type="number" name="cvv" required class="form-control">
                   </div>
                 </div>
               </div>
               <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm </button>
             </form>
+            <script>
+              $(".paymentForm").on("submit", function(){
+                return confirm("Ar tikrai norite rezervuoti nurodytą kambarį");
+              });
+            </script>
           </div>
           <!-- End -->
 

@@ -13,6 +13,8 @@
       <th>Nuo</th>
       <th>Iki</th>
       <th>Kambario numeris</th>
+      <th>Saskaita</th>
+      <th>Atšaukti rezervaciją</th>
     </thead>
     <tbody class="table-color">
       @foreach($rezervacijos as $rezervacija )
@@ -20,6 +22,14 @@
         <td>{{$rezervacija->dateFrom}}</td>
         <td>{{$rezervacija->dateTo}}</td>
         <td>{{$rezervacija->room_id}}</td>
+        <td><a type="button" class="btn info-button" href="{{route('sertificate', $rezervacija->id )}}"><i class="fas fa-file-certificate fa-2x">Išrašas</i></a></td>
+        <td>
+          <form action = "{{route('rezervacijarezervacija.destroy', $rezervacija->id)}}" method = "post">
+            @csrf
+            {{method_field('DELETE')}}
+            <button type="submit" class="btn btn-danger" href=""><i class="fas fa-trash-alt"></i> Atšaukti rezervaciją</button>
+          </form>
+        </td>
       </tr>
       @endforeach
     </tbody>
