@@ -4,7 +4,6 @@
 
   $user = Auth::user();
   $paymentCards = $user->payments;
-  $paymentCard = $paymentCards[0];
 @endphp
 <div class="container">
   <div class="profile-font skill-row row">
@@ -23,6 +22,10 @@
             {{method_field('DELETE')}}
             <button type="submit" class="btn btn-danger" name="button">Ištrinti Paskyrą</button>
         </form>
+        @if(!$paymentCards->isEmpty())
+        @php
+          $paymentCard = $paymentCards[0];
+        @endphp
         <form method="POST" action="{{route('payments.update', $paymentCard->id)}}">
           @csrf
           {{ method_field('PUT') }}
@@ -30,6 +33,7 @@
           <input type="text" value="{{$paymentCard->cardCode}}" name="cardCode">
           <button type="submit" class="btn btn-primary" name="button">Patvirtinti</button>
       </form>
+      @endif
     </div>
   </div>
 </div>
