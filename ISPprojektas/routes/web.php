@@ -98,7 +98,7 @@ Route::namespace('Payments')->group(function () {
 });
 
 Route::get('/payment', 'Payments\PaymentController@showPayment')->name('payment-page');
-//Route::get('/paymentai', 'Payments\PaymentController@saveCardData')->name('payment-update');
+Route::get('/paymentai', 'Payments\PaymentController@saveCardData')->name('payment-update');
 Route::get('paymentai', array('as' => 'payment-update', 'uses' => 'Payments\PaymentController@saveCardData', function ($user_id, $room_id) {
   //
 }));
