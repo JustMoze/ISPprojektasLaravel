@@ -200,5 +200,19 @@ class RezervacijaController extends Controller
     public function destroy($id)
     {
         //
+        $rezervation = Rezervacija::find($id);
+        $user_id = Auth::user()->getId();
+        $user = User::find($user_id);
+        $room = Room::find($rezervation->room_id);
+        $myPayment = $user->payments;
+        $onePayment = $myPayment[0];
+        $firstDay = Carbon::parse($rezervation->dateFrom);
+        $lastDay = Carbon::parse($rezervation->dateTo);
+        $days =  $firstDay->diffInDays($lastDay, false);
+        $totalPrice = ($days * $room->kaina) + $onePayment->amount;
+        $onePayment->amount = $totalPrice;
+        $onePayment->save();
+        $rezervation->delete();
+        return redirect('/myRezervations')->with('success', 'Rezervacija sėkmingai buvo atšaukta ir pinigai grąžinti į sąskaitą');
     }
 }

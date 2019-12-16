@@ -1,3 +1,11 @@
+@php
+  use Illuminate\Support\Facades\Auth;
+  use App\Models\Rezervacija;
+
+  $user = Auth::user();
+  $paymentCards = $user->payments;
+  $paymentCard = $paymentCards[0];
+@endphp
 <div class="container">
   <div class="profile-font skill-row row">
     <!-- images/Room1.jpg images/avatar.png-->
@@ -15,6 +23,13 @@
             {{method_field('DELETE')}}
             <button type="submit" class="btn btn-danger" name="button">Ištrinti Paskyrą</button>
         </form>
+        <form method="POST" action="{{route('payments.update', $paymentCard->id)}}">
+          @csrf
+          {{ method_field('PUT') }}
+          <label for="">Redaguoti sąskaitos numerį: </label>
+          <input type="text" value="{{$paymentCard->cardCode}}" name="cardCode">
+          <button type="submit" class="btn btn-primary" name="button">Patvirtinti</button>
+      </form>
     </div>
   </div>
 </div>
